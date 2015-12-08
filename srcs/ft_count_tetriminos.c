@@ -1,20 +1,24 @@
-#include <fillit.h>
+#include "../includes/fillit.h"
+#include "../includes/libft.h"
 
-int	ft_count_tetriminos(t_triminos *tetriminos)
+size_t	ft_count_tetriminos(char *s)
 {
-	int			nb;
-	t_triminos	*current;
+	size_t		i;
+	size_t		j;
 
-	current = tetriminos;
-	if (current)
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		nb = 1;
-		while (current->next)
+		if (s[i] == '\n' && (s[i + 1]  == '\n' || s[i + 1] == '\0'))
 		{
-			nb++;
-			current = current->next;
+			i++;
+			j++;
 		}
-		return (nb);
+		else
+			i++;
 	}
+	if (j > 26)
+		return (1);
 	return (0);
 }

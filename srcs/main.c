@@ -6,7 +6,7 @@ int		main(void)
 	int		ret;
 	char buf[BUF_SIZE + 1];
 
-	fd = open("../examples/falsetest7", O_RDONLY);
+	fd = open("../examples/maxtetriminos", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
@@ -28,6 +28,11 @@ int		main(void)
 		if (ft_4(buf) == 1)
 		{
 			ft_putstr("\nT H E R E   I S   N O T  4 #\n\n");
+			return (0);
+		}
+		if (ft_count_tetriminos(buf) == 1)
+		{
+			ft_putstr("\nT H E R E  I S  T O O  M A N Y  T E T R I M I N O S\n\n");
 			return (0);
 		}
 	}

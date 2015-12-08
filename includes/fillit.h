@@ -20,5 +20,6 @@ size_t	ft_4(char *map);
 char	*set_map(size_t n);
 int		ft_get_char(char *map);
 int		ft_get_size(char *map);
+size_t	ft_count_tetriminos(char *s);
 
 #endif
