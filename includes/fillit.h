@@ -11,12 +11,12 @@
 
 typedef struct		t_form
 {
-	size_t		i;
-	size_t		i + 1;
-	size_t		i + 5;
-	size_t		i + 6;
+	size_t		a;
+	size_t		b;
+	size_t		c;
+	size_t		d ;
 }					t_form
-*/
+
 int		ft_get_valid_form(char *map);
 size_t	ft_4(char *map);
 char	*set_map(size_t n);
