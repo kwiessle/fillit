@@ -1,4 +1,3 @@
-#include "../includes/fillit.h"
 
 char	*set_map(size_t n)
 {
