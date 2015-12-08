@@ -9,11 +9,13 @@
 #include "libft.h"
 #define BUF_SIZE 676
 
-/*typedef struct		t_cord
+typedef struct		t_form
 {
-	size_t		cord[x];
-	size_t		cord[y];
-}					t_cord
+	size_t		i;
+	size_t		i + 1;
+	size_t		i + 5;
+	size_t		i + 6;
+}					t_form
 */
 int		ft_get_valid_form(char *map);
 size_t	ft_4(char *map);
