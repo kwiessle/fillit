@@ -1,5 +1,5 @@
 #include "../includes/fillit.h"
-#include "../includes/flibft.h"
+#include "../includes/libft.h"
 
 int		ft_get_valid_form (char *map)
 {

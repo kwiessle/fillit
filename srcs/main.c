@@ -6,7 +6,7 @@ int		main(void)
 	int		ret;
 	char buf[BUF_SIZE + 1];
 
-	fd = open("../examples/maxtetriminos", O_RDONLY);
+	fd = open("../examples/10tetrimos", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");

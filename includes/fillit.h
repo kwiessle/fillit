@@ -15,7 +15,7 @@ typedef struct		t_form
 	size_t		b;
 	size_t		c;
 	size_t		d ;
-}					t_form
+}					t_form;
 
 int		ft_get_valid_form(char *map);
 size_t	ft_4(char *map);
