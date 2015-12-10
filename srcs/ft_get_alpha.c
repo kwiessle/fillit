@@ -1,36 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_tetriminos.c                              :+:      :+:    :+:   */
+/*   ft_get_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 16:22:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/10 16:27:20 by vquesnel         ###   ########.fr       */
+/*   Created: 2015/12/10 16:15:31 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/10 16:31:37 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 #include "../includes/libft.h"
 
-size_t	ft_count_tetriminos(char *s)
+char	*ft_get_alpha(char *map)
 {
-	size_t		i;
-	size_t		j;
+	int		i;
+	char	c;
+	char	*tmp;
 
 	i = 0;
-	j = 0;
-	while (s[i])
+	c = 'A';
+	tmp = map;
+	while (map[i] != '\0')
 	{
-		if (s[i] == '\n' && (s[i + 1] == '\n' || s[i + 1] == '\0'))
+		while (map[i] != '\n' && map[i + 1] != '\n')
 		{
-			i++;
-			j++;
+			if (map[i] == '#')
+			{
+				tmp[i] = c;
+				map[i] = tmp[i];
+			}
+			else
+				i++;
 		}
-		else
-			i++;
+		c = c + 1;
+		i++;
 	}
-	if (j > 26)
-		return (1);
+	return (map);
+}
+
+int		main(void)
+{
+	char *map;
+
+	map = "..#.\n..#.\n..#.\n...#\n\n..#.\n..#.\n..#.\n..#.";
+	printf("%s\n", ft_get_alpha(map));
 	return (0);
 }

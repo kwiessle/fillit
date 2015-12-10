@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/10 16:25:06 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/10 16:28:03 by vquesnel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fillit.h"
+#include "../include/libft.h"
 
 int		main(void)
 {
 	int		fd;
 	int		ret;
-	char buf[BUF_SIZE + 1];
+	char	buf[BUF_SIZE + 1];
 
-	fd = open("../examples/10tetrimos", O_RDONLY);
+	fd = open("../examples/falsetest3", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
@@ -14,7 +27,7 @@ int		main(void)
 	}
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
-		buf[ret] ='\0';
+		buf[riet] = '\0';
 		if (ft_get_char(buf) == 1)
 		{
 			ft_putstr("\nC H A R A C T E R   F A I L E D !\n\n");
@@ -32,7 +45,8 @@ int		main(void)
 		}
 		if (ft_count_tetriminos(buf) == 1)
 		{
-			ft_putstr("\nT H E R E  I S  T O O  M A N Y  T E T R I M I N O S\n\n");
+			ft_putstr("\nT H E R E  I S  T O O  M A N Y \
+					T E T R I M I N O S\n\n");
 			return (0);
 		}
 	}
