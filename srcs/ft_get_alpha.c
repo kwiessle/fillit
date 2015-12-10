@@ -52,4 +52,3 @@ char	*ft_get_alpha(char *map)
 	printf("%s\n", ft_get_alpha(map));
 	return (0);
 }*/
->>>>>>> adf1b4d1a473bbdc83b1630a96fa63aadb5f6e5e
