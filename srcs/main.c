@@ -22,7 +22,7 @@ int		main(void)
 	size_t		check2;
 	char		buf[BUF_SIZE + 1];
 
-	fd = open("../examples/goodtest", O_RDONLY);
+	fd = open("../examples/maxtetriminos", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
@@ -55,20 +55,20 @@ int		main(void)
 		ft_putstr(ft_get_alpha(buf));
 		tab = ft_is_forms(buf);
 	}
-	printf("\n\ntab[0] = %zu      <-- o\n", tab[0]);
-	printf("tab[1] = %zu      <-- i\n", tab[1]);
-	printf("tab[2] = %zu      <-- t\n", tab[2]);
-	printf("tab[3] = %zu      <-- s\n", tab[3]);
-	printf("tab[4] = %zu      <-- z\n", tab[4]);
-	printf("tab[5] = %zu      <-- l\n", tab[5]);
-	printf("tab[6] = %zu      <-- j\n\n\n", tab[6]);
+	printf("\n\ntab[0] = %zu	<--[o]\n", tab[0]);
+	printf("tab[1] = %zu	<--[i]\n", tab[1]);
+	printf("tab[2] = %zu	<--[t]\n", tab[2]);
+	printf("tab[3] = %zu	<--[s]\n", tab[3]);
+	printf("tab[4] = %zu	<--[z]\n", tab[4]);
+	printf("tab[5] = %zu	<--[l]\n", tab[5]);
+	printf("tab[6] = %zu	<--[j]\n\n\n", tab[6]);
 	check = tab[0] + tab[1] + tab[2] + tab[3] + tab[4] + tab[5] + tab[6];
 	if (check == ft_count_tetriminos(buf))
-		printf("\nT H E   %zu   T E T R I M I N O S   A R E   O K !\n\n", ft_count_tetriminos(buf));
+		printf("\nT H E  [%zu]   T E T R I M I N O S   A R E   O K !     ( :\n\n", ft_count_tetriminos(buf));
 	if (check != ft_count_tetriminos(buf))
 	{
 		check2 = ft_count_tetriminos(buf) - check;
-		printf("\nT H E R E   I S   %zu   F A L S E    T E T R I M I N O S !\n\n", check2);
+		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S !     ) :\n\n", check2);
 	}
 	if (close(fd) == -1)
 	{
