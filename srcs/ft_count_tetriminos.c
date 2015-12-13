@@ -31,6 +31,6 @@ size_t	ft_count_tetriminos(char *s)
 			i++;
 	}
 	if (j > 26)
-		return (1);
-	return (0);
+		return (27);
+	return (j);
 }

@@ -24,5 +24,13 @@ int		ft_get_char(char *map);
 int		ft_get_size(char *map);
 size_t	ft_count_tetriminos(char *s);
 char	*ft_get_alpha(char *map);
+size_t	ft_is_o(char *map);
+size_t	ft_is_i(char *map);
+size_t	ft_is_l(char *map);
+size_t	ft_is_j(char *map);
+size_t	ft_is_s(char *map);
+size_t	ft_is_z(char *map);
+size_t	ft_is_t(char *map);
+size_t	*ft_is_forms(char *map);
 
 #endif
