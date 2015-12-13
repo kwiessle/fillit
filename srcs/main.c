@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include "../includes/libft.h"
 
 int		main(void)
 {
@@ -63,12 +62,13 @@ int		main(void)
 	printf("tab[5] = %zu	<--[l]\n", tab[5]);
 	printf("tab[6] = %zu	<--[j]\n\n\n", tab[6]);
 	check = tab[0] + tab[1] + tab[2] + tab[3] + tab[4] + tab[5] + tab[6];
+	printf("%zu Tetriminos checked  -  %zu Form(s) Found(ed).\n", ft_count_tetriminos(buf), check);
 	if (check == ft_count_tetriminos(buf))
-		printf("\nT H E  [%zu]   T E T R I M I N O S   A R E   O K !     ( :\n\n", ft_count_tetriminos(buf));
+		printf("\nT H E  [%zu]   T E T R I M I N O S   A R E   O K !\n\n", ft_count_tetriminos(buf));
 	if (check != ft_count_tetriminos(buf))
 	{
 		check2 = ft_count_tetriminos(buf) - check;
-		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S !     ) :\n\n", check2);
+		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S !\n\n", check2);
 	}
 	if (close(fd) == -1)
 	{

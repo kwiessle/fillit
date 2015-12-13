@@ -47,23 +47,3 @@ size_t		*ft_is_forms(char *map)
 	}
 	return (tab);
 }
-
-
-/*
-int		main(void)
-{
-	char *map = "....\n.##.\n.##.\n....\n\n....\n....\n..##\n..##\0";
-	size_t	*tab;
-
-	tab = ft_is_forms(map);
-	printf("tab[0] = %zu\n", tab[0]);
-	printf("tab[1] = %zu\n", tab[1]);
-	printf("tab[2] = %zu\n", tab[2]);
-	printf("tab[3] = %zu\n", tab[3]);
-	printf("tab[4] = %zu\n", tab[4]);
-	printf("tab[5] = %zu\n", tab[5]);
-	printf("tab[6] = %zu\n", tab[6]);
-	printf("tab[7] = %zu\n", tab[7]);
-	printf("tab[8] = %zu\n", tab[8]);
-	return (0);
-}*/

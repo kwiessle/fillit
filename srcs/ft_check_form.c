@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../includes/fillit.h"
 
 size_t		ft_is_o(char *map)
@@ -148,32 +147,3 @@ size_t		ft_is_j(char *map)
 	}
 	return (1);
 }
-/*
-int		main()
-{
-	char *error = "##..\n.##.\n....\n....\n";
-
-	// T   M A P S //
-	char	*t1 = "#...\n##..\n#...\n....\n";
-	char	*t2 = "....\n....\n.###\n..#.\n";
-	char	*t3 = "....\n.#..\n##..\n.#..\n";
-	char	*t4 = "....\n.#..\n###.\n....\n";
-
-	// L   M A P S //
-	char	*l1 = "..#.\n..#.\n..##\n....\n";
-	char	*l2 = "....\n....\n###.\n#...\n";
-	char	*l3 = "....\n.##.\n..#.\n..#.\n";
-	char	*l4 = "....\n....\n...#\n.###\n";
-
-	// J    M A P S //
-	char	*j1 = "....\n...#\n...#\n..##\n";
-	char	*j2 = "....\n.#..\n.###\n....\n";
-	char	*j3 = "##..\n#...\n#...\n....\n";
-	char	*j4 = "....\n....\n###.\n..#.\n";
-
-
-	printf("\n\n%s\n\n", error);
-	printf("ERROR = 1   ||   SUCCES = 0");
-	printf("\n\nresult : %zu\n\n", ft_is_z(error));
-	return (0);
-}*/
