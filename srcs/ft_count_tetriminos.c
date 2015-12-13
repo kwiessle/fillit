@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include "../includes/libft.h"
 
 size_t	ft_count_tetriminos(char *s)
 {

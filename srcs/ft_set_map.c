@@ -40,9 +40,3 @@ char	*set_map(size_t n)
 	map[i] = '\0';
 	return (map);
 }
-
-/*int	main()
-{
-	printf("%s", set_map(9));
-	return (0);
-}*/

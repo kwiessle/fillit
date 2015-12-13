@@ -43,12 +43,3 @@ char	*ft_get_alpha(char *map)
 	tmp[i] = '\0';
 	return (tmp);
 }
-
-/*int		main(void)
-{
-	char *map;
-
-	map = "...#\n..#.\n..#.\n...#\n\n#...\n..#.\n#...\n..#.";
-	printf("%s\n", ft_get_alpha(map));
-	return (0);
-}*/

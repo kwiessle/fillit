@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include "../includes/libft.h"
-#include <stdio.h>
 
 int		ft_get_size(char *map)
 {

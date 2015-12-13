@@ -21,7 +21,7 @@ int		main(void)
 	size_t		check2;
 	char		buf[BUF_SIZE + 1];
 
-	fd = open("../examples/maxtetriminos", O_RDONLY);
+	fd = open("../examples/2tetriminos", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
