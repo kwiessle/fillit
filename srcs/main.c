@@ -22,7 +22,7 @@ int		main(void)
 	size_t		check2;
 	char		buf[BUF_SIZE + 1];
 
-	fd = open("../examples/maxtetriminos", O_RDONLY);
+	fd = open("../examples/goodtest", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
@@ -64,7 +64,7 @@ int		main(void)
 	printf("tab[6] = %zu      <-- j\n\n\n", tab[6]);
 	check = tab[0] + tab[1] + tab[2] + tab[3] + tab[4] + tab[5] + tab[6];
 	if (check == ft_count_tetriminos(buf))
-		ft_putstr("\nT E T R I M I N O S   A R E   O K !\n\n");
+		printf("\nT H E   %zu   T E T R I M I N O S   A R E   O K !\n\n", ft_count_tetriminos(buf));
 	if (check != ft_count_tetriminos(buf))
 	{
 		check2 = ft_count_tetriminos(buf) - check;
