@@ -17,11 +17,12 @@ int		ft_get_size(char *map);
 size_t	ft_count_tetriminos(char *s);
 size_t	ft_4(char *map);
 
-// F U N C T I O N S
+// T O O L S
 
 char	*ft_set_color(char *map);
 char	*set_map(size_t n);
 size_t	*ft_is_forms(char *map);
+size_t	ft_add_tab(size_t *tab);
 
 // F O R M S
 
