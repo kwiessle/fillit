@@ -1,39 +1,44 @@
 /* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_4.c                                             :+:      :+:    :+:   */
+/*   ft_get_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 16:21:32 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/10 16:21:43 by vquesnel         ###   ########.fr       */
+/*   Created: 2015/12/10 16:15:31 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/10 16:47:51 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-size_t		ft_4(char *map)
+char	*ft_set_color(char *map)
 {
-	char		c;
-	size_t		i;
-	size_t		j;
+	int		i;
+	char	c;
+	char	*tmp;
 
 	i = 0;
-	j = 0;
-	while (map[i])
+	c = 'A';
+	tmp = (char *)malloc(sizeof(char) * ft_strlen(map));
+	while (map[i] != '\0')
 	{
 		if (map[i] == '#')
-			j++;
-		if (j > 4)
-			return (1);
-		if (map[i] == '\n' && (map[i + 1] == '\n' || map[i + 1] == '\0'))
 		{
-			if (j != 4)
-				return (1);
-			else
-				j = 0;
+			tmp[i] = c;
+			i++;
 		}
-		i++;
+		else if ( map[i] == '\n' && map[i + 1] == '\n')
+		{
+			tmp[i] = map[i];
+			i++;
+			c = c + 1;
+		}
+		else
+		{
+			tmp[i] = map[i];
+			i++;
+		}
 	}
-	return (0);
+	tmp[i] = '\0';
+	return (tmp);
 }

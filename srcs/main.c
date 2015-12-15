@@ -22,7 +22,7 @@ int		main(void)
 	char		*f_map;
 	char		buf[BUF_SIZE + 1];
 
-	fd = open("../examples/8tetriminos", O_RDONLY);
+	fd = open("../examples/goldentest", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
@@ -52,7 +52,7 @@ int		main(void)
 					T E T R I M I N O S\n\n");
 			return (0);
 		}
-		ft_putstr(ft_get_alpha(buf));
+		ft_putstr(ft_set_color(buf));
 		tab = ft_is_forms(buf);
 	}
 	printf("\n\ntab[0] = %zu	<--[o]\n", tab[0]);
