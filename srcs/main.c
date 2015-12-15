@@ -74,7 +74,7 @@ int		main(void)
 	printf("tab[16] = %zu	<--[j.2]\n", tab[16]);
 	printf("tab[17] = %zu	<--[j.3]\n", tab[17]);
 	printf("tab[18] = %zu	<--[j.4]\n\n\n", tab[18]);
-	check = tab[0] + tab[1] + tab[2] + tab[3] + tab[4] + tab[5] + tab[6] + tab[7] + tab[8] + tab[9] + tab[10] + tab[11] + tab[12] + tab[13] + tab[14] + tab[15] + tab[16] + tab[17] + tab[18];
+	check = ft_add_tab(ft_is_forms(buf));
 	printf("%zu Tetriminos checked  -  %zu Form(s) Found(ed).\n", ft_count_tetriminos(buf), check);
 	if (check == ft_count_tetriminos(buf))
 		printf("\nT H E  [%zu]   T E T R I M I N O S   A R E   O K !\n\n", ft_count_tetriminos(buf));

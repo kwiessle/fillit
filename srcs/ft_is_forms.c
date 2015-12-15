@@ -1,6 +1,6 @@
 #include "../includes/fillit.h"
 
-size_t		*ft_set_tab(void)
+static size_t		*ft_set_tab(void)
 {
 	size_t		*tab;
 	size_t		i;
@@ -15,9 +15,8 @@ size_t		*ft_set_tab(void)
 	return (tab);
 }
 
-size_t		*ft_is_forms(char *map)
+static size_t		*ft_is_forms_1(char *map)
 {
-
 	size_t		*tab;
 	char		*buf;
 	size_t		start;
@@ -41,6 +40,24 @@ size_t		*ft_is_forms(char *map)
 			tab[4]++;
 		if (ft_is_t(buf) == 3)
 			tab[5]++;
+		start = start + 21;
+	}
+	return (tab);
+}
+
+static size_t		*ft_is_forms_2(char *map)
+{
+	size_t		*tab;
+	char		*buf;
+	size_t		start;
+
+	start = 0;
+	tab = ft_is_forms_1(map);
+	while (start < 546)
+	{
+		if (!map[start])
+			break;
+		buf = ft_strsub(map, start, 20);
 		if (ft_is_t(buf) == 4)
 			tab[6]++;
 		if (ft_is_s(buf) == 1)
@@ -53,6 +70,26 @@ size_t		*ft_is_forms(char *map)
 			tab[10]++;
 		if (ft_is_l(buf) == 1)
 			tab[11]++;
+		start = start + 21;
+	}
+	return (tab);
+}
+
+static size_t		*ft_is_forms_3(char *map)
+{
+	size_t		*tab;
+	char		*buf;
+	size_t		start;
+
+	start = 0;
+	tab = ft_is_forms_2(map);
+	while (start < 546)
+	{
+		if (!map[start])
+			break;
+		buf = ft_strsub(map, start, 20);
+		
+		
 		if (ft_is_l(buf) == 2)
 			tab[12]++;
 		if (ft_is_l(buf) == 3)
@@ -70,4 +107,9 @@ size_t		*ft_is_forms(char *map)
 		start = start + 21;
 	}
 	return (tab);
+}
+
+size_t      *ft_is_forms(char *map)
+{
+    return (ft_is_forms_3(map));
 }
