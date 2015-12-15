@@ -46,7 +46,7 @@ int		main(void)
 			ft_putstr("\nT H E R E   I S   N O T  4 #\n\n");
 			return (0);
 		}
-		if (ft_count_tetriminos(buf) == 27)
+		if (ft_count_tetriminos(buf) >= 27)
 		{
 			ft_putstr("\nT H E R E  I S  T O O  M A N Y \
 					T E T R I M I N O S\n\n");
@@ -84,11 +84,9 @@ int		main(void)
 		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S !\n\n", check2);
 	}
 	f_map = set_map(ft_count_tetriminos(buf));
-	ft_putchar('\n');
-	ft_putchar('\n');
+	ft_putstr("\n\n");
 	ft_putstr(f_map);
-	ft_putchar('\n');
-	ft_putchar('\n');
+	ft_putstr("\n\n");
 	if (close(fd) == -1)
 	{
 		ft_putstr("close() error\n");
