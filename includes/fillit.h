@@ -9,21 +9,22 @@
 #include "libft.h"
 #define BUF_SIZE 676
 
-typedef struct		t_form
-{
-	size_t		a;
-	size_t		b;
-	size_t		c;
-	size_t		d ;
-}					t_form;
 
-int		ft_get_valid_form(char *map);
-size_t	ft_4(char *map);
-char	*set_map(size_t n);
+// T E S T S
+
 int		ft_get_char(char *map);
 int		ft_get_size(char *map);
 size_t	ft_count_tetriminos(char *s);
-char	*ft_get_alpha(char *map);
+size_t	ft_4(char *map);
+
+// F U N C T I O N S
+
+char	*ft_set_color(char *map);
+char	*set_map(size_t n);
+size_t	*ft_is_forms(char *map);
+
+// F O R M S
+
 size_t	ft_is_o(char *map);
 size_t	ft_is_i(char *map);
 size_t	ft_is_l(char *map);
@@ -31,6 +32,8 @@ size_t	ft_is_j(char *map);
 size_t	ft_is_s(char *map);
 size_t	ft_is_z(char *map);
 size_t	ft_is_t(char *map);
-size_t	*ft_is_forms(char *map);
+
+
+
 
 #endif

@@ -6,7 +6,7 @@ size_t		*ft_set_tab(void)
 	size_t		i;
 
 	i = 0;
-	tab = (size_t *)malloc(sizeof(size_t) * 7);
+	tab = (size_t *)malloc(sizeof(size_t) * 19);
 	while (i < 7)
 	{
 		tab[i] = 0;
@@ -29,20 +29,44 @@ size_t		*ft_is_forms(char *map)
 		if (!map[start])
 			break;
 		buf = ft_strsub(map, start, 20);
-		if (ft_is_o(buf) == 0)
+		if (ft_is_o(buf) == 1)
 			tab[0]++;
-		if (ft_is_i(buf) == 0)
+		if (ft_is_i(buf) == 1)
 			tab[1]++;
-		if (ft_is_t(buf) == 0)
+		if (ft_is_i(buf) == 2)
 			tab[2]++;
-		if (ft_is_s(buf) == 0)
+		if (ft_is_t(buf) == 1)
 			tab[3]++;
-		if (ft_is_z(buf) == 0)
+		if (ft_is_t(buf) == 2)
 			tab[4]++;
-		if (ft_is_l(buf) == 0)
+		if (ft_is_t(buf) == 3)
 			tab[5]++;
-		if (ft_is_j(buf) == 0)
+		if (ft_is_t(buf) == 4)
 			tab[6]++;
+		if (ft_is_s(buf) == 1)
+			tab[7]++;
+		if (ft_is_s(buf) == 2)
+			tab[8]++;
+		if (ft_is_z(buf) == 1)
+			tab[9]++;
+		if (ft_is_z(buf) == 2)
+			tab[10]++;
+		if (ft_is_l(buf) == 1)
+			tab[11]++;
+		if (ft_is_l(buf) == 2)
+			tab[12]++;
+		if (ft_is_l(buf) == 3)
+			tab[13]++;
+		if (ft_is_l(buf) == 4)
+			tab[14]++;
+		if (ft_is_j(buf) == 1)
+			tab[15]++;
+		if (ft_is_j(buf) == 2)
+			tab[16]++;
+		if (ft_is_j(buf) == 3)
+			tab[17]++;
+		if (ft_is_j(buf) == 4)
+			tab[18]++;
 		start = start + 21;
 	}
 	return (tab);
