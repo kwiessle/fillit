@@ -22,7 +22,7 @@ int		main(void)
 	char		*f_map;
 	char		buf[BUF_SIZE + 1];
 
-	fd = open("../examples/goldentest", O_RDONLY);
+	fd = open("../examples/goodtest", O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
