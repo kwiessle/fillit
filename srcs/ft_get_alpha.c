@@ -10,7 +10,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include "../includes/libft.h"
 
 char	*ft_get_alpha(char *map)
 {

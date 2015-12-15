@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include "../includes/libft.h"
 
 char	*set_map(size_t n)
 {
@@ -28,7 +27,7 @@ char	*set_map(size_t n)
 	{
 		while (c < width)
 		{
-			map[i] = '#';
+			map[i] = '.';
 			i++;
 			c++;
 		}
