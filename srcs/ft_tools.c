@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_color.c                                     :+:      :+:    :+:   */
+/*   ft_tools.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/16 15:26:48 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 15:29:51 by vquesnel         ###   ########.fr       */
+/*   Created: 2015/12/16 15:32:55 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/16 15:34:06 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char	*ft_set_color(char *map)
+size_t		ft_add_tab(size_t *tab)
 {
-	int		i;
-	char	c;
-	char	*tmp;
+	size_t		i;
+	size_t		index;
 
 	i = 0;
-	c = 'A';
-	tmp = (char *)malloc(sizeof(char) * ft_strlen(map));
-	while (map[i] != '\0')
+	index = 0;
+	while (index < 19)
 	{
-		if (map[i] == '#')
-			tmp[i++] = c;
-		else if (map[i] == '\n' && map[i + 1] == '\n')
-		{
-			tmp[i] = map[i];
-			c = c + 1;
-			i++;
-		}
-		else
-		{
-			tmp[i] = map[i];
-			i++;
-		}
+		i = tab[index] + i;
+		index++;
 	}
-	tmp[i] = '\0';
-	return (tmp);
+	return (i);
 }

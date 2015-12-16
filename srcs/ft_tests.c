@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_4.c                                             :+:      :+:    :+:   */
+/*   ft_tests.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 16:21:32 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/10 16:21:43 by vquesnel         ###   ########.fr       */
+/*   Created: 2015/12/16 15:31:26 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/16 15:32:39 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t		ft_4(char *map)
 	return (0);
 }
 
-size_t	ft_count_tetriminos(char *s)
+size_t		ft_count_tetriminos(char *s)
 {
 	size_t		i;
 	size_t		j;
@@ -60,7 +60,7 @@ size_t	ft_count_tetriminos(char *s)
 	return (j);
 }
 
-int		ft_get_char(char *map)
+int			ft_get_char(char *map)
 {
 	size_t		i;
 
@@ -75,7 +75,7 @@ int		ft_get_char(char *map)
 	return (0);
 }
 
-int		ft_get_size(char *map)
+int			ft_get_size(char *map)
 {
 	size_t		nl;
 	size_t		i;
