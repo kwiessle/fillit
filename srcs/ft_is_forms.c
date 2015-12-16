@@ -12,7 +12,7 @@
 
 #include "../includes/fillit.h"
 
-size_t		*ft_set_tab(void)
+static size_t		*ft_set_tab(void)
 {
 	size_t		*tab;
 	size_t		i;
@@ -27,7 +27,7 @@ size_t		*ft_set_tab(void)
 	return (tab);
 }
 
-size_t		*ft_is_forms_1(char *map)
+static size_t		*ft_is_forms_1(char *map)
 {
 	size_t		*tab;
 	char		*buf;
@@ -55,7 +55,7 @@ size_t		*ft_is_forms_1(char *map)
 	return (tab);
 }
 
-size_t		*ft_is_forms_2(char *map)
+static size_t		*ft_is_forms_2(char *map)
 {
 	size_t		*tab;
 	char		*buf;
@@ -83,7 +83,7 @@ size_t		*ft_is_forms_2(char *map)
 	return (tab);
 }
 
-size_t		*ft_is_forms_3(char *map)
+static size_t		*ft_is_forms_3(char *map)
 {
 	size_t		*tab;
 	char		*buf;

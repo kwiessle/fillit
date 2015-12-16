@@ -53,7 +53,7 @@ int		main(void)
 			return (0);
 		}
 		ft_putstr(ft_set_color(buf));
-		tab = ft_is_global_forms(buf);
+		tab = ft_is_forms_4(buf);
 	}
 	printf("\n\ntab[0] = %zu	<--[o]\n", tab[0]);
 	printf("tab[1] = %zu	<--[i.1]\n", tab[1]);
@@ -74,7 +74,7 @@ int		main(void)
 	printf("tab[16] = %zu	<--[j.2]\n", tab[16]);
 	printf("tab[17] = %zu	<--[j.3]\n", tab[17]);
 	printf("tab[18] = %zu	<--[j.4]\n\n\n", tab[18]);
-	check = ft_add_tab(ft_is_global_forms(buf));
+	check = ft_add_tab(ft_is_forms_4(buf));
 	printf("%zu Tetriminos checked  -  %zu Form(s) Found(ed).\n",\
 			ft_count_tetriminos(buf), check);
 	if (check == ft_count_tetriminos(buf))
