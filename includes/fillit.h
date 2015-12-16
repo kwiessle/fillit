@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:54:17 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 15:55:43 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/16 17:10:36 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,9 @@ size_t	ft_is_j(char *map);
 size_t	ft_is_s(char *map);
 size_t	ft_is_z(char *map);
 size_t	ft_is_t(char *map);
-
+size_t	*ft_is_forms_1(char *map);
+size_t	*ft_is_forms_2(char *map);
+size_t	*ft_is_forms_3(char *map);
+size_t	*ft_is_forms_4(char *map);
+size_t	*ft_is_global_forms(char *map);
 #endif
