@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 16:25:06 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 17:14:12 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/16 17:32:53 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ int		main(void)
 	if (check != ft_count_tetriminos(buf))
 	{
 		check2 = ft_count_tetriminos(buf) - check;
-		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S \
-				!\n\n", check2);
+		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S !\
+				\n\n", check2);
 	}
 	f_map = set_map(ft_count_tetriminos(buf));
 	ft_putstr("\n\n");
