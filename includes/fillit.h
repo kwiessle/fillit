@@ -50,9 +50,6 @@ size_t	ft_is_j(char *map);
 size_t	ft_is_s(char *map);
 size_t	ft_is_z(char *map);
 size_t	ft_is_t(char *map);
-size_t	*ft_is_forms_1(char *map);
-size_t	*ft_is_forms_2(char *map);
-size_t	*ft_is_forms_3(char *map);
 size_t	*ft_is_forms_4(char *map);
-size_t	*ft_is_global_forms(char *map);
+
 #endif
