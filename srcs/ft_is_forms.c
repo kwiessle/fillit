@@ -6,13 +6,13 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:34:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 16:01:57 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/16 17:02:52 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-static size_t		*ft_set_tab(void)
+size_t		*ft_set_tab(void)
 {
 	size_t		*tab;
 	size_t		i;
@@ -27,7 +27,7 @@ static size_t		*ft_set_tab(void)
 	return (tab);
 }
 
-static size_t		*ft_is_forms_1(char *map)
+size_t		*ft_is_forms_1(char *map)
 {
 	size_t		*tab;
 	char		*buf;
@@ -50,14 +50,12 @@ static size_t		*ft_is_forms_1(char *map)
 			tab[3]++;
 		if (ft_is_t(buf) == 2)
 			tab[4]++;
-		if (ft_is_t(buf) == 3)
-			tab[5]++;
 		start = start + 21;
 	}
 	return (tab);
 }
 
-static size_t		*ft_is_forms_2(char *map)
+size_t		*ft_is_forms_2(char *map)
 {
 	size_t		*tab;
 	char		*buf;
@@ -80,14 +78,12 @@ static size_t		*ft_is_forms_2(char *map)
 			tab[9]++;
 		if (ft_is_z(buf) == 2)
 			tab[10]++;
-		if (ft_is_l(buf) == 1)
-			tab[11]++;
 		start = start + 21;
 	}
 	return (tab);
 }
 
-static size_t		*ft_is_forms_3(char *map)
+size_t		*ft_is_forms_3(char *map)
 {
 	size_t		*tab;
 	char		*buf;
@@ -110,6 +106,28 @@ static size_t		*ft_is_forms_3(char *map)
 			tab[15]++;
 		if (ft_is_j(buf) == 2)
 			tab[16]++;
+		start = start + 21;
+	}
+	return (tab);
+}
+
+size_t		*ft_is_forms_4(char *map)
+{
+	size_t		*tab;
+	char		*buf;
+	size_t		start;
+
+	start = 0;
+	tab = ft_is_forms_3(map);
+	while (start < 546)
+	{
+		if (!map[start])
+			break ;
+		buf = ft_strsub(map, start, 20);
+		if (ft_is_t(buf) == 3)
+			tab[5]++;
+		if (ft_is_l(buf) == 1)
+			tab[11]++;
 		if (ft_is_j(buf) == 3)
 			tab[17]++;
 		if (ft_is_j(buf) == 4)
@@ -117,17 +135,4 @@ static size_t		*ft_is_forms_3(char *map)
 		start = start + 21;
 	}
 	return (tab);
-}
-
-/*static size_t		*ft_is_forms_4(char *map)
-{
-	size_t		*tab;
-	char		*buf;
-	size_t		start;
-
-	start = 0;
-	tab = */
-size_t				*ft_is_forms(char *map)
-{
-	return (ft_is_forms_3(map));
 }

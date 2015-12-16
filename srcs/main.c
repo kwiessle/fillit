@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 16:25:06 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/10 17:04:39 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/16 17:14:12 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		main(void)
 			return (0);
 		}
 		ft_putstr(ft_set_color(buf));
-		tab = ft_is_forms(buf);
+		tab = ft_is_global_forms(buf);
 	}
 	printf("\n\ntab[0] = %zu	<--[o]\n", tab[0]);
 	printf("tab[1] = %zu	<--[i.1]\n", tab[1]);
@@ -74,14 +74,17 @@ int		main(void)
 	printf("tab[16] = %zu	<--[j.2]\n", tab[16]);
 	printf("tab[17] = %zu	<--[j.3]\n", tab[17]);
 	printf("tab[18] = %zu	<--[j.4]\n\n\n", tab[18]);
-	check = ft_add_tab(ft_is_forms(buf));
-	printf("%zu Tetriminos checked  -  %zu Form(s) Found(ed).\n", ft_count_tetriminos(buf), check);
+	check = ft_add_tab(ft_is_global_forms(buf));
+	printf("%zu Tetriminos checked  -  %zu Form(s) Found(ed).\n",\
+			ft_count_tetriminos(buf), check);
 	if (check == ft_count_tetriminos(buf))
-		printf("\nT H E  [%zu]   T E T R I M I N O S   A R E   O K !\n\n", ft_count_tetriminos(buf));
+		printf("\nT H E  [%zu]   T E T R I M I N O S   A R E   O K !\n\n",\
+				ft_count_tetriminos(buf));
 	if (check != ft_count_tetriminos(buf))
 	{
 		check2 = ft_count_tetriminos(buf) - check;
-		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S !\n\n", check2);
+		printf("\nT H E R E   I S   [%zu]   F A L S E    T E T R I M I N O S \
+				!\n\n", check2);
 	}
 	f_map = set_map(ft_count_tetriminos(buf));
 	ft_putstr("\n\n");
