@@ -16,7 +16,6 @@ int		main(int ac, char **av)
 {
 	int			fd;
 	int			ret;
-	size_t		*tab;
 	char		buf[BUF_SIZE + 1];
 
 	if (ac != 2)
@@ -40,8 +39,7 @@ int		main(int ac, char **av)
 			ft_putstr("error\n");
 			return (0);
 		}
-		tab = ft_is_forms_4(buf);
-		if (ft_count_tetriminos(buf) != ft_add_tab(tab))
+		if (ft_count_tetriminos(buf) != ft_add_tab(ft_is_forms_4(buf)))
 		{
 			ft_putstr("error\n");
 			return (0);
