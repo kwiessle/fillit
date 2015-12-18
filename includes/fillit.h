@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:54:17 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 17:10:36 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/18 14:08:07 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ size_t	ft_is_s(char *map);
 size_t	ft_is_z(char *map);
 size_t	ft_is_t(char *map);
 size_t	*ft_is_forms_4(char *map);
+size_t	ft_is_valid_forms(char *map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:30:03 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 15:30:07 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/18 14:06:21 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,14 @@ size_t		ft_is_j(char *map)
 			i++;
 	}
 	return (0);
+}
+
+size_t		ft_is_valid_forms(char *map)
+{
+	if (ft_is_o(map) == 0 || ft_is_i(map) == 0 || ft_is_z(map) == 0 || \
+			ft_is_s(map) == 0 || ft_is_t(map) == 0 || ft_is_l(map) == 0 \
+			|| ft_is_j(map) == 0)
+		return (1);
+	else
+		return (0);
 }

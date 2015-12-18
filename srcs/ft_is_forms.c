@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:34:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/16 17:02:52 by vquesnel         ###   ########.fr       */
+/*   Updated: 2015/12/18 13:59:32 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ static size_t		*ft_is_forms_3(char *map)
 	return (tab);
 }
 
-size_t		*ft_is_forms_4(char *map)
+size_t				*ft_is_forms_4(char *map)
 {
 	size_t		*tab;
 	char		*buf;
