@@ -12,14 +12,20 @@
 
 #include "../includes/fillit.h"
 
-int		main(void)
+int		main(int ac, char **av)
 {
 	int			fd;
 	int			ret;
 	size_t		*tab;
 	char		buf[BUF_SIZE + 1];
 
-	fd = open("../examples/goldntest", O_RDONLY);
+	if (ac != 2)
+	{
+		ft_putstr("error\n");
+		return (0);
+	}
+		fd = open(av[1], O_RDONLY);
+
 	if (fd == -1)
 	{
 		ft_putstr("open() error\n");
@@ -29,12 +35,17 @@ int		main(void)
 	{
 		buf[ret] = '\0';
 		if (ft_get_char(buf) == 1 || ft_get_size(buf) == 1 || ft_4(buf) == 1 ||\
-				ft_count_tetriminos(buf) >= 27 || ft_is_valid_forms(buf) == 1)
+				ft_count_tetriminos(buf) >= 27)
 		{
 			ft_putstr("error\n");
 			return (0);
 		}
 		tab = ft_is_forms_4(buf);
+		if (ft_count_tetriminos(buf) != ft_add_tab(tab))
+		{
+			ft_putstr("error\n");
+			return (0);
+		}
 	}
 	if (close(fd) == -1)
 	{
