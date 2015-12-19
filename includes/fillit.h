@@ -51,5 +51,6 @@ size_t	ft_is_s(char *map);
 size_t	ft_is_z(char *map);
 size_t	ft_is_t(char *map);
 size_t	*ft_is_forms_4(char *map);
+size_t	ft_is_valid_forms(char *map);
 
 #endif
