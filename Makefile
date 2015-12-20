@@ -16,7 +16,6 @@ FLAGS =		-Wall -Wextra -Werror
 $(NAME):	$(OBJS)
 		@make -C libft/ fclean
 		@make -C libft/
-		@echo "Create binary"
 		@gcc -o $(NAME) $(OBJS) $(LIBS)
 		@echo "Complitation ok"
 
