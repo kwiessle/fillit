@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+#include <stdio.h>
 
 size_t		ft_add_tab(size_t *tab)
 {
@@ -24,5 +25,15 @@ size_t		ft_add_tab(size_t *tab)
 		i = tab[index] + i;
 		index++;
 	}
+	return (i);
+}
+
+size_t		ft_square_op(size_t n)
+{
+	size_t		i;
+
+	i = 2;
+		while (i * i < n)
+			i++;
 	return (i);
 }
