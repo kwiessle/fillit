@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <sys/uio.h>
-# include "libft.h"
+# include "../libft/libft.h"
 # define BUF_SIZE 676
 
 /*
@@ -38,6 +38,7 @@ char	*ft_set_color(char *map);
 char	*set_map(size_t n);
 size_t	*ft_is_forms(char *map);
 size_t	ft_add_tab(size_t *tab);
+size_t	ft_square_op(size_t n);
 
 /*
 ** F O R M S

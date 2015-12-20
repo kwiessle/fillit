@@ -44,6 +44,7 @@ int		main(int ac, char **av)
 			ft_putstr("error\n");
 			return (0);
 		}
+		ft_putstr(set_map(ft_square_op(ft_count_tetriminos(buf) * 4)));
 	}
 	if (close(fd) == -1)
 	{
