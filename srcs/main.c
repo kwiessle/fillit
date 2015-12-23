@@ -27,7 +27,7 @@ int		main(int ac, char **av)
 
 	if (fd == -1)
 	{
-		ft_putstr("open() error\n");
+		ft_putstr("error\n");
 		return (0);
 	}
 	while ((ret = read(fd, buf, BUF_SIZE)))
@@ -48,7 +48,7 @@ int		main(int ac, char **av)
 	}
 	if (close(fd) == -1)
 	{
-		ft_putstr("close() error\n");
+		ft_putstr("error\n");
 		return (0);
 	}
 	return (0);
