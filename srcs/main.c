@@ -12,6 +12,22 @@
 
 #include "../includes/fillit.h"
 
+int		main_test(char *buf)
+{
+	if (ft_get_char(buf) == 1 || ft_get_size(buf) == 1 || ft_4(buf) == 1 ||\
+			ft_count_tetriminos(buf) >= 27)
+	{
+		ft_putstr("error\n");
+		return (0);
+	}
+	if (ft_count_tetriminos(buf) != ft_add_tab(ft_is_forms_4(buf)))
+	{
+		ft_putstr("error\n");
+		return (0);
+	}
+	return (1);
+}
+
 int		main(int ac, char **av)
 {
 	int			fd;
@@ -23,8 +39,7 @@ int		main(int ac, char **av)
 		ft_putstr("error\n");
 		return (0);
 	}
-		fd = open(av[1], O_RDONLY);
-
+	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("error\n");
@@ -33,18 +48,8 @@ int		main(int ac, char **av)
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
 		buf[ret] = '\0';
-		if (ft_get_char(buf) == 1 || ft_get_size(buf) == 1 || ft_4(buf) == 1 ||\
-				ft_count_tetriminos(buf) >= 27)
-		{
-			ft_putstr("error\n");
-			return (0);
-		}
-		if (ft_count_tetriminos(buf) != ft_add_tab(ft_is_forms_4(buf)))
-		{
-			ft_putstr("error\n");
-			return (0);
-		}
-		ft_putstr(set_map(ft_square_op(ft_count_tetriminos(buf) * 4)));
+		if (main_test(buf) == 1)
+			ft_putstr(set_map(ft_square_op(ft_count_tetriminos(buf) * 4)));
 	}
 	if (close(fd) == -1)
 	{
