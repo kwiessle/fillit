@@ -36,7 +36,7 @@ size_t	ft_4(char *map);
 
 char	*ft_set_color(char *map);
 char	*set_map(size_t n);
-size_t	*ft_is_forms(char *map);
+size_t	*ft_is_forms(char *map, char c);
 size_t	ft_add_tab(size_t *tab);
 size_t	ft_square_op(size_t n);
 
@@ -44,14 +44,13 @@ size_t	ft_square_op(size_t n);
 ** F O R M S
 */
 
-size_t	ft_is_o(char *map);
-size_t	ft_is_i(char *map);
-size_t	ft_is_l(char *map);
-size_t	ft_is_j(char *map);
-size_t	ft_is_s(char *map);
-size_t	ft_is_z(char *map);
-size_t	ft_is_t(char *map);
-size_t	*ft_is_forms_4(char *map);
-size_t	ft_is_valid_forms(char *map);
+size_t	ft_is_o(char *map, char c);
+size_t	ft_is_i(char *map, char c);
+size_t	ft_is_l(char *map, char c);
+size_t	ft_is_j(char *map, char c);
+size_t	ft_is_s(char *map, char c);
+size_t	ft_is_z(char *map, char c);
+size_t	ft_is_t(char *map, char c);
+size_t	*ft_is_forms_4(char *map, char c);
 
 #endif
