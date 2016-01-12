@@ -58,7 +58,7 @@ size_t	*ft_is_forms_4(char *map, char c);
 ** S O L V E R
 */
 
-char *ft_print_o(char *map, char c);
+char *ft_print_o(char *map, char c, size_t i);
 char *ft_solver(char *map);
 
 #endif

@@ -45,5 +45,6 @@ size_t		ft_line_size(char *map)
 	i = 0;
 	while (map[i] != '\n')
 		i++;
+	i++;
 	return (i);
 }
