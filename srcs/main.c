@@ -33,6 +33,7 @@ int		main(int ac, char **av)
 	int			fd;
 	int			ret;
 	char		buf[BUF_SIZE + 1];
+	char		*final_map;
 
 	if (ac != 2)
 	{
@@ -49,8 +50,13 @@ int		main(int ac, char **av)
 	{
 		buf[ret] = '\0';
 		if (main_test(buf) == 1)
-			ft_putstr(set_map(ft_square_op(ft_count_tetriminos(buf) * 4)));
+		{
+			final_map = set_map(ft_square_op(ft_count_tetriminos(buf) * 4));
+			ft_putstr(final_map);
+		}
 	}
+	ft_putchar('\n');
+	ft_putstr(ft_solver(final_map));
 	if (close(fd) == -1)
 	{
 		ft_putstr("error\n");

@@ -39,6 +39,7 @@ char	*set_map(size_t n);
 size_t	*ft_is_forms(char *map, char c);
 size_t	ft_add_tab(size_t *tab);
 size_t	ft_square_op(size_t n);
+size_t ft_line_size(char *map);
 
 /*
 ** F O R M S
@@ -52,5 +53,12 @@ size_t	ft_is_s(char *map, char c);
 size_t	ft_is_z(char *map, char c);
 size_t	ft_is_t(char *map, char c);
 size_t	*ft_is_forms_4(char *map, char c);
+
+/*
+** S O L V E R
+*/
+
+char *ft_print_o(char *map, char c);
+char *ft_solver(char *map);
 
 #endif

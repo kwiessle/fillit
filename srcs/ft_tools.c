@@ -37,3 +37,13 @@ size_t		ft_square_op(size_t n)
 			i++;
 	return (i);
 }
+
+size_t		ft_line_size(char *map)
+{
+	size_t		i;
+
+	i = 0;
+	while (map[i] != '\n')
+		i++;
+	return (i);
+}
