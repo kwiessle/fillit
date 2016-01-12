@@ -12,24 +12,24 @@
 
 #include "../includes/fillit.h"
 
-size_t		ft_is_l(char *map)
+size_t		ft_is_l(char *map, char c)
 {
 	size_t		i;
 
 	i = 0;
 	while (map[i])
 	{
-		if ((map[i] == '#' && map[i + 5] == '#') && (map[i + 10] == '#' &&\
-					map[i + 11] == '#'))
+		if ((map[i] == c && map[i + 5] == c) && (map[i + 10] == c &&\
+					map[i + 11] == c))
 			return (1);
-		if ((map[i] == '#' && map[i + 1] == '#') && (map[i + 2] == '#' &&\
-					map[i + 5] == '#'))
+		if ((map[i] == c && map[i + 1] == c) && (map[i + 2] == c &&\
+					map[i + 5] == c))
 			return (2);
-		if ((map[i] == '#' && map[i + 1] == '#') && (map[i + 6] == '#' &&\
-					map[i + 11] == '#'))
+		if ((map[i] == c && map[i + 1] == c) && (map[i + 6] == c &&\
+					map[i + 11] == c))
 			return (3);
-		if ((map[i] == '#' && map[i + 3] == '#') && (map[i + 4] == '#' &&\
-					map[i + 5] == '#'))
+		if ((map[i] == c && map[i + 3] == c) && (map[i + 4] == c &&\
+					map[i + 5] == c))
 			return (4);
 		else
 			i++;
@@ -37,24 +37,24 @@ size_t		ft_is_l(char *map)
 	return (0);
 }
 
-size_t		ft_is_j(char *map)
+size_t		ft_is_j(char *map, char c)
 {
 	size_t		i;
 
 	i = 0;
 	while (map[i])
 	{
-		if ((map[i] == '#' && map[i + 5] == '#') && (map[i + 9] == '#' &&\
-					map[i + 10] == '#'))
+		if ((map[i] == c && map[i + 5] == c) && (map[i + 9] == c &&\
+					map[i + 10] == c))
 			return (1);
-		if ((map[i] == '#' && map[i + 5] == '#') && (map[i + 6] == '#' &&\
-					map[i + 7] == '#'))
+		if ((map[i] == c && map[i + 5] == c) && (map[i + 6] == c &&\
+					map[i + 7] == c))
 			return (2);
-		if ((map[i] == '#' && map[i + 1] == '#') && (map[i + 5] == '#' &&\
-					map[i + 10] == '#'))
+		if ((map[i] == c && map[i + 1] == c) && (map[i + 5] == c &&\
+					map[i + 10] == c))
 			return (3);
-		if ((map[i] == '#' && map[i + 1] == '#') && (map[i + 2] == '#' &&\
-					map[i + 7] == '#'))
+		if ((map[i] == c && map[i + 1] == c) && (map[i + 2] == c &&\
+					map[i + 7] == c))
 			return (4);
 		else
 			i++;
@@ -62,11 +62,11 @@ size_t		ft_is_j(char *map)
 	return (0);
 }
 
-size_t		ft_is_valid_forms(char *map)
+size_t		ft_is_valid_forms(char *map, char c)
 {
-	if (ft_is_o(map) == 0 || ft_is_i(map) == 0 || ft_is_z(map) == 0 || \
-			ft_is_s(map) == 0 || ft_is_t(map) == 0 || ft_is_l(map) == 0 \
-			|| ft_is_j(map) == 0)
+	if (ft_is_o(map, c) == 0 || ft_is_i(map, c) == 0 || ft_is_z(map, c) == 0 || \
+			ft_is_s(map, c) == 0 || ft_is_t(map, c) == 0 || ft_is_l(map, c) == 0 \
+			|| ft_is_j(map, c) == 0)
 		return (1);
 	else
 		return (0);

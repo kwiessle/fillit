@@ -1,3 +1,3 @@
 #include "../includes/fillit/h"
 
-int
+char	*ft_solve

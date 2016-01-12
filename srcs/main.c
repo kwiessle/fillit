@@ -20,7 +20,7 @@ int		main_test(char *buf)
 		ft_putstr("error\n");
 		return (0);
 	}
-	if (ft_count_tetriminos(buf) != ft_add_tab(ft_is_forms_4(buf)))
+	if (ft_count_tetriminos(buf) != ft_add_tab(ft_is_forms_4(buf, '#')))
 	{
 		ft_putstr("error\n");
 		return (0);
