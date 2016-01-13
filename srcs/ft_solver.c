@@ -14,7 +14,7 @@ char	*ft_solver(char *map, size_t nb_tetriminos)
 	{
 		if (map[i] == '.')
 		{
-			tmp_map = ft_print_o(map, c + index, i);
+			tmp_map = ft_print_l(map, c + index, i);
 			index++;
 			nb_tetriminos--;
 		}
