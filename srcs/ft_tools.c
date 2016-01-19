@@ -34,7 +34,7 @@ size_t		ft_square_op(size_t n)
 
 	i = 2;
 		while (i * i < n)
-			i++;
+		i++;
 	return (i);
 }
 
