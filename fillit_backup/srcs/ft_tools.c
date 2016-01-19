@@ -1,25 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_tools.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:33:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/01 19:09:22 by vquesnel         ###   ########.fr       */
+/*   Created: 2015/12/16 15:32:55 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/16 15:34:06 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/fillit.h"
+#include <stdio.h>
 
-void	ft_strclr(char *str)
+size_t		ft_add_tab(size_t *tab)
 {
-	if (str)
+	size_t		i;
+	size_t		index;
+
+	i = 0;
+	index = 0;
+	while (index < 19)
 	{
-		while (*str != '\0')
-		{
-			*str = '\0';
-			str++;
-		}
+		i = tab[index] + i;
+		index++;
 	}
+	return (i);
+}
+
+size_t		ft_square_op(size_t n)
+{
+	size_t		i;
+
+	i = 2;
+		while (i * i < n)
+			i++;
+	return (i);
+}
+
+size_t		ft_line_size(char *map)
+{
+	size_t		i;
+
+	i = 0;
+	while (map[i] != '\n')
+		i++;
+	i++;
+	return (i);
 }

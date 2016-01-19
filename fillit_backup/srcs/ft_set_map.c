@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_set_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:33:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/01 19:09:22 by vquesnel         ###   ########.fr       */
+/*   Created: 2015/12/10 16:24:28 by vquesnel          #+#    #+#             */
+/*   Updated: 2015/12/10 16:25:02 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/fillit.h"
 
-void	ft_strclr(char *str)
+char	*set_map(size_t n)
 {
-	if (str)
+	size_t		width;
+	size_t		i;
+	size_t		c;
+	char		*map;
+
+	width = n;
+	i = 0;
+	c = 0;
+	map = (char *)malloc((n * n + n + 1) * sizeof(char *));
+	while (n > 0)
 	{
-		while (*str != '\0')
+		while (c < width)
 		{
-			*str = '\0';
-			str++;
+			map[i] = '.';
+			i++;
+			c++;
 		}
+		map[i] = '\n';
+		c = 0;
+		i++;
+		n--;
 	}
+	map[i] = '\0';
+	return (map);
 }
