@@ -1,4 +1,3 @@
-
 NAME = fillit
 
 SRCS = srcs/main.c srcs/ft_set_map.c srcs/ft_tests.c srcs/ft_set_color.c \

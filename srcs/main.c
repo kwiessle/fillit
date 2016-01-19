@@ -50,9 +50,9 @@ int		main(int ac, char **av)
 	{
 		buf[ret] = '\0';
 		if (main_test(buf) == 1)
-			final_map = set_map(ft_square_op(ft_count_tetriminos(buf) * 4) + 1);
+			final_map = set_map(ft_square_op(ft_count_tetriminos(buf) * 4));
 	}
-	ft_putstr(ft_solver(final_map, ft_count_tetriminos(buf)));
+	ft_putstr(ft_solver(final_map, ft_count_tetriminos(buf), buf));
 	if (close(fd) == -1)
 	{
 		ft_putstr("error\n");
