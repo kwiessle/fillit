@@ -48,3 +48,13 @@ size_t		ft_line_size(char *map)
 	i++;
 	return (i);
 }
+
+size_t		ft_available_o(char *map, size_t c, size_t s_line)
+{
+
+	if (map[c] == '.' && map[c + 1] == '.' && map[c + 3 + s_line] == '.' &&  map[c + 4 + s_line] == '.')
+	{
+		return (1);
+	}
+	return (0);
+}

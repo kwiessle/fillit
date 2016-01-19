@@ -40,6 +40,7 @@ size_t	*ft_is_forms(char *map, char c);
 size_t	ft_add_tab(size_t *tab);
 size_t	ft_square_op(size_t n);
 size_t ft_line_size(char *map);
+size_t	ft_available_o(char *map, size_t c, size_t s_line);
 
 /*
 ** F O R M S
@@ -58,13 +59,13 @@ size_t	*ft_is_forms_4(char *map, char c);
 ** S O L V E R
 */
 
-char *ft_print_o(char *map, char c, size_t i);
+char *ft_print_o(char *map, char c, size_t i, size_t s_size);
 char *ft_print_i(char *map, char c, size_t i);
 char *ft_print_z(char *map, char c, size_t i);
 char *ft_print_s(char *map, char c, size_t i);
 char *ft_print_t(char *map, char c, size_t i);
 char *ft_print_l(char *map, char c, size_t i);
 char *ft_print_j(char *map, char c, size_t i);
-char *ft_solver(char *map, size_t nb_tetriminos);
+char *ft_solver(char *map, size_t nb_tetriminos, char *buffer);
 
 #endif

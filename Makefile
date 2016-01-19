@@ -3,7 +3,7 @@ NAME = fillit
 
 SRCS = srcs/main.c srcs/ft_set_map.c srcs/ft_tests.c srcs/ft_set_color.c \
 		srcs/ft_is_forms.c srcs/ft_forms_pack_1.c srcs/ft_forms_pack_2.c \
-		srcs/ft_tools.c srcs/ft_solver.c srcs/ft_print_forms.c
+		srcs/ft_tools.c srcs/ft_solver2.c srcs/ft_print_forms.c
 
 OBJS =		$(SRCS:.c=.o)
 
