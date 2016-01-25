@@ -1,40 +1,39 @@
 #include "../includes/fillit.h"
 
-char	*ft_solver(char *final_map, size_t nb_tetriminos, char *buffer)
+char	*ft_solver(char *map, size_t nb_tetriminos, char *buffer)
 {
-	char		*tmp_map;
+	char		c;
 	size_t		i;
-	char		color;
+	char		*tmp_map;
 	size_t		start;
 	size_t		s_line;
 
+	c = 65;
 	i = 0;
-	color = 65;
-	s_line = ft_line_size(final_map) - 3;
 	start = 0;
-	tmp_map = final_map;
-	while (final_map[i] != '\0' && nb_tetriminos != 0)
+	s_line = ft_line_size(map) - 3;
+	tmp_map = malloc(sizeof(map));
+	while (map[i] && nb_tetriminos != 0)
 	{
-		if (final_map[i] == '.')// && tmp_map[i] != '\0')
+		if (map[i] == '.')
 		{
-			if (ft_available_o(final_map, i, s_line) == 1 && ft_is_o(ft_strsub(buffer, start, 20), '#') == 1)
+			if (ft_available_o(map, i, s_line) == 1 && ft_is_o(ft_strsub(buffer, start, 20), '#') == 1)
 			{
-				tmp_map = ft_print_o(final_map, color, i);
-				color++;
-				start = start + 21;
+				tmp_map = ft_print_o(map, c, i);
+				c++;
 				nb_tetriminos--;
 			}
 		}
-		if (final_map[i + 1] == '\0' && nb_tetriminos != 0)
+		if (map[i + 1] == '\0' && nb_tetriminos!= 0)
 		{
 			i = 0;
-			while (color-- != 2)
+			while (c-- != 66)
 				nb_tetriminos++;
 			nb_tetriminos++;
-			tmp_map = set_map(ft_line_size(final_map));
-			final_map = tmp_map;
+			return (ft_solver(set_map(ft_square_op(ft_count_tetriminos(buffer) * 4) + 1), nb_tetriminos, buffer));
 		}
 			i++;
 	}
+
 	return (tmp_map);
 }

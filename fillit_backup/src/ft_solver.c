@@ -24,17 +24,15 @@ char	*ft_solver(char *map, size_t nb_tetriminos, char *buffer)
 				nb_tetriminos--;
 			}
 		}
+		if (map[i + 1] == '\0' && nb_tetriminos!= 0)
+		{
+			i = 0;
+			while (c-- != 2)
+				nb_tetriminos++;
+			nb_tetriminos++;
+			map = set_map(ft_square_op(ft_count_tetriminos(buffer) * 4) + 1);
+		}
 		i++;
 	}
 	return (tmp_map);
 }
-
-/*int	main()
-{
-	char *map = "....\n....\n....\n....\n....\n....\n....\n....\n";
-	char *buffer = ".##.\n.##.\n....\n....\n\n.##.\n.##.\n....\n....\n";
-
-
-	printf("%s\n", ft_solver(map, 2, buffer));
-	return (0);
-}*/
