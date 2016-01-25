@@ -22,6 +22,14 @@ char	*ft_solver(char *map, size_t nb_tetriminos, char *buffer)
 				tmp_map = ft_print_o(map, c, i);
 				c++;
 				nb_tetriminos--;
+				start = start + 21;
+			}
+			if (ft_available_o(map, i, s_line) == 1 && ft_is_o(ft_strsub(buffer, start, 20), '#') == 0)
+			{
+				start = start + 21;
+				nb_tetriminos--;
+				c++;
+				i--;
 			}
 		}
 		if (map[i + 1] == '\0' && nb_tetriminos!= 0)
@@ -32,8 +40,7 @@ char	*ft_solver(char *map, size_t nb_tetriminos, char *buffer)
 			nb_tetriminos++;
 			return (ft_solver(set_map(ft_square_op(ft_count_tetriminos(buffer) * 4) + 1), nb_tetriminos, buffer));
 		}
-			i++;
+		i++;
 	}
-
 	return (tmp_map);
 }
