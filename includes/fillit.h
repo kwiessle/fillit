@@ -59,7 +59,7 @@ size_t	*ft_is_forms_4(char *map, char c);
 ** S O L V E R
 */
 
-char *ft_print_o(char *map, char c, size_t i, size_t s_size);
+char *ft_print_o(char *map, char c, size_t i);// ,size_t s_line);
 char *ft_print_i(char *map, char c, size_t i);
 char *ft_print_z(char *map, char c, size_t i);
 char *ft_print_s(char *map, char c, size_t i);

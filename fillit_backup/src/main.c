@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include "../../includes/fillit.h"
 
 int		main_test(char *buf)
 {
@@ -52,7 +52,9 @@ int		main(int ac, char **av)
 		if (main_test(buf) == 1)
 			final_map = set_map(ft_square_op(ft_count_tetriminos(buf) * 4) + 1);
 	}
-	ft_putstr(ft_solver(final_map, ft_count_tetriminos(buf)));
+	ft_putstr(final_map);
+	ft_putchar('\n');
+	ft_putstr(ft_solver(final_map, ft_count_tetriminos(buf), buf));
 	if (close(fd) == -1)
 	{
 		ft_putstr("error\n");
