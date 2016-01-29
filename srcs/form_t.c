@@ -39,8 +39,8 @@ size_t		ft_is_t3(char *map, char c)
 	i = 0;
 	while (map[i])
 	{
-		if ((map[i] == c && map[i + 1] == c) && (map[i + 2] == c &&\
-					map[i + 6] == c))
+		if ((map[i] == c && map[i + 4] == c) && (map[i + 5] == c &&\
+					map[i + 10] == c))
 			return (1);
 		else
 			i++;

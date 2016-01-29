@@ -146,3 +146,12 @@ size_t		ft_available_l3(char *map, size_t c, size_t s_line)
 	return (0);
 }
 
+size_t		ft_available_l4(char *map, size_t c, size_t s_line)
+{
+	if ((map[c] == '.' && map[c + 2 + s_line] == '.'  && map[c + 3 + s_line] == '.') && map[c + 4 + s_line] =='.')
+		return (1);
+	return (0);
+}
+
+
+

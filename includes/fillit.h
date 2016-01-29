@@ -58,7 +58,6 @@ size_t	ft_available_j4(char *map, size_t c, size_t s_line);
 size_t	ft_available_l1(char *map, size_t c, size_t s_line);
 size_t	ft_available_l2(char *map, size_t c, size_t s_line);
 size_t	ft_available_l3(char *map, size_t c, size_t s_line);
-size_t	ft_available_z2(char *map, size_t c, size_t s_line);
 size_t	ft_available_l4(char *map, size_t c, size_t s_line);
 
 /*
