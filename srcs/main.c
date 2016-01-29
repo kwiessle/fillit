@@ -79,7 +79,7 @@ int		main(int ac, char **av)
 		else
 			return (0);
 	}
-	ft_putstr(ft_solver(final_map, ft_count_tetriminos(buf), buf));
+	ft_putstr(ft_solver(final_map, ft_count_tetriminos(buf), buf, 65, 0));
 	if (close(fd) == -1)
 	{
 		ft_putstr("error3\n");
