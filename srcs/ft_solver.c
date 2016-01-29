@@ -11,26 +11,23 @@ char	*ft_solver(char *map, size_t nb_tetriminos, char *buffer)
 	c = 65;
 	i = 0;
 	start = 0;
-	s_line = ft_line_size(map) - 3;
+	s_line = ft_line_size(map) - 4;
 	tmp_map = malloc(sizeof(map));
 	while (map[i] && nb_tetriminos != 0)
 	{
-		if (map[i] == '.')
+		if (ft_available_j3(map, i, s_line) == 1 && ft_is_j3(ft_strsub(buffer, start, 20), '#') == 1)
 		{
-			if (ft_available_o(map, i, s_line) == 1 && ft_is_o(ft_strsub(buffer, start, 20), '#') == 1)
-			{
-				tmp_map = ft_print_o(map, c, i);
-				c++;
-				nb_tetriminos--;
-				start = start + 21;
-			}
-			if (ft_available_o(map, i, s_line) == 1 && ft_is_o(ft_strsub(buffer, start, 20), '#') == 0)
-			{
-				start = start + 21;
-				nb_tetriminos--;
-				c++;
-				i--;
-			}
+			tmp_map = ft_print_j3(map, c, i);
+			c++;
+			nb_tetriminos--;
+			start = start + 21;
+		}
+		if (ft_available_j3(map, i, s_line) == 1 && ft_is_j3(ft_strsub(buffer, start, 20), '#') == 0)
+		{
+			start = start + 21;
+			nb_tetriminos--;
+			c++;
+			i = - 1;
 		}
 		if (map[i + 1] == '\0' && nb_tetriminos!= 0)
 		{
