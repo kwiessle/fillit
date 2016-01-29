@@ -48,3 +48,17 @@ size_t		ft_line_size(char *map)
 	i++;
 	return (i);
 }
+
+char	*ft_reset_map(char *map)
+{
+	size_t		i;
+
+	i = 0;
+	while (map[i])
+	{
+		if (ft_isalpha(map[i] == 1)
+				map[i] = '.';
+		i++;
+	}
+	return (map);
+}
