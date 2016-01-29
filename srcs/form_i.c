@@ -1,6 +1,6 @@
 #include "../includes/fillit.h"
 
-size_t		ft_is_i1(char *map, char c)
+size_t		ft_is_i(char *map, char c)
 {
 	size_t		i;
 
@@ -10,29 +10,14 @@ size_t		ft_is_i1(char *map, char c)
 		if ((map[i] == c && map[i + 1] == c) && (map[i + 2] == c &&\
 					map[i + 3] == c))
 			return (1);
-		else
-			i++;
-	}
-	return (0);
-}
-
-size_t		ft_is_i2(char *map, char c)
-{
-	size_t		i;
-
-	i = 0;
-	while (map[i])
-	{
-
 		if ((map[i] == c && map[i + 5] == c) && (map[i + 10] == c &&\
 					map[i + 15] == c))
-			return (1);
+			return (2);
 		else
 			i++;
 	}
 	return (0);
 }
-
 
 char		*ft_print_i1(char *map, char c, size_t i)
 {

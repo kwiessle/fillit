@@ -59,30 +59,19 @@ size_t	ft_available_l1(char *map, size_t c, size_t s_line);
 size_t	ft_available_l2(char *map, size_t c, size_t s_line);
 size_t	ft_available_l3(char *map, size_t c, size_t s_line);
 size_t	ft_available_l4(char *map, size_t c, size_t s_line);
+char	*ft_reset_map(char*map);
 
 /*
 ** F O R M S
 */
 
 size_t	ft_is_o(char *map, char c);
-size_t	ft_is_i1(char *map, char c);
-size_t	ft_is_i2(char *map, char c);
-size_t	ft_is_l1(char *map, char c);
-size_t	ft_is_l2(char *map, char c);
-size_t	ft_is_l3(char *map, char c);
-size_t	ft_is_l4(char *map, char c);
-size_t	ft_is_j1(char *map, char c);
-size_t	ft_is_j2(char *map, char c);
-size_t	ft_is_j3(char *map, char c);
-size_t	ft_is_j4(char *map, char c);
-size_t	ft_is_s1(char *map, char c);
-size_t	ft_is_s2(char *map, char c);
-size_t	ft_is_z1(char *map, char c);
-size_t	ft_is_z2(char *map, char c);
-size_t	ft_is_t1(char *map, char c);
-size_t	ft_is_t2(char *map, char c);
-size_t	ft_is_t3(char *map, char c);
-size_t	ft_is_t4(char *map, char c);
+size_t	ft_is_i(char *map, char c);
+size_t	ft_is_l(char *map, char c);
+size_t	ft_is_j(char *map, char c);
+size_t	ft_is_s(char *map, char c);
+size_t	ft_is_z(char *map, char c);
+size_t	ft_is_t(char *map, char c);
 size_t	*ft_is_forms_4(char *map, char c);
 
 /*

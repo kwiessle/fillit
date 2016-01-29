@@ -22,7 +22,7 @@ char	*set_map(size_t n)
 	width = n;
 	i = 0;
 	c = 0;
-	map = (char *)malloc((n * n + n + 1) * sizeof(char *));
+	map = (char *)malloc((n  * n + n + 1) * sizeof(char *));
 	while (n > 0)
 	{
 		while (c < width)
