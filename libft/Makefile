@@ -79,6 +79,7 @@ SRC_NAME= ft_atoi.c \
 		  ft_lstmap.c \
 		  ft_lstdel.c \
 		  ft_lstdelone.c \
+		  ft_swap.c \
 
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
