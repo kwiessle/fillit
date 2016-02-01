@@ -98,6 +98,6 @@ char *ft_print_j1(char *map, char c, size_t i);
 char *ft_print_j2(char *map, char c, size_t i);
 char *ft_print_j3(char *map, char c, size_t i);
 char *ft_print_j4(char *map, char c, size_t i);
-char *ft_solver(char *map, size_t nb_tetriminos, char **buffer, size_t k, char c);
+char *ft_solver(char *map, size_t nb_tetriminos, char *buffer, char c, size_t start);
 
 #endif
