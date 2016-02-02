@@ -21,26 +21,20 @@ char		**place_tetriminos(char *buffer)
 	return (tab);
 }
 
-char	ft_formcolor(char **buffer)
+char	ft_formcolor(char **buffer ,size_t i)
 {
-	size_t	i;
 	char	c;
 	size_t	j;
 
-	i = 0;
 	j = 0;
-	while (buffer[i])
+	if (buffer[i] == NULL)
+		return (0) ;
+	while (ft_isalpha(buffer[i][j]) == 0)
+		j++;
+	if (buffer[i][j] >= 65 && buffer[i][j] <= 90)
 	{
-		while (!ft_isalpha(buffer[i][j]))
-			j++;
-		if (ft_isalpha(buffer[i][j] == 1))
-		{
-			c = buffer[i][j];
-			return (c);
-		}
-		if (buffer[i] == NULL)
-			break ;
-		i++;
+		c = buffer[i][j];
+		return (c);
 	}
 	return (0);
 }

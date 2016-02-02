@@ -65,7 +65,7 @@ char	*ft_reset_map(char *map)
 	i = 0;
 	while (map[i])
 	{
-		if (ft_isalpha(map[i] == 1))
+		if (map[i] >= 65 && map[i] <= 90)
 			map[i] = '.';
 		i++;
 	}
