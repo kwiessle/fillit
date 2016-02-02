@@ -46,9 +46,9 @@ int		main(int ac, char **av)
 		{
 			tab = place_tetriminos(ft_set_color(buf));
 			printf("tab length :%zu\n", ft_tablen(tab));
-			printf("%c\n", ft_formcolor(tab[0]));
-			printf("%c\n", ft_formcolor(tab[1]));
-			printf("%c\n", ft_formcolor(tab[2]));
+			printf("%s\n", tab[0]);
+			printf("%s\n", tab[1]);
+			/*printf("%c\n", ft_formcolor(tab[2]));
 			printf("%c\n", ft_formcolor(tab[3]));
 			printf("%c\n", ft_formcolor(tab[4]));
 			printf("%c\n", ft_formcolor(tab[5]));
@@ -63,13 +63,14 @@ int		main(int ac, char **av)
 			printf("%c\n", ft_formcolor(tab[15]));
 			printf("%c\n", ft_formcolor(tab[16]));
 			printf("%c\n", ft_formcolor(tab[17]));
-			printf("%c\n", ft_formcolor(tab[18]));
+			printf("%c\n", ft_formcolor(tab[18]));*/
 			final_map = set_map(ft_square_op(ft_tablen(tab) * 4));
 		}
 		else
 			return (0);
 	}
-	ft_putendl(ft_solver(final_map, ft_tablen(tab), tab, 0));
+	ft_putendl(final_map);
+	ft_putendl(ft_solver(final_map, tab, 0, 'A'));
 	close(fd);
 	return (0);
 }
