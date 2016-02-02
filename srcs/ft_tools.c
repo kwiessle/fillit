@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include <stdio.h>
 
 size_t		ft_add_tab(size_t *tab)
 {
@@ -25,6 +24,16 @@ size_t		ft_add_tab(size_t *tab)
 		i = tab[index] + i;
 		index++;
 	}
+	return (i);
+}
+
+size_t	ft_tablen(char **buffer)
+{
+	size_t	i;
+
+	i = 0;
+	while (buffer[i] != NULL)
+		i++;
 	return (i);
 }
 

@@ -61,6 +61,8 @@ size_t	ft_available_l3(char *map, size_t c, size_t s_line);
 size_t	ft_available_l4(char *map, size_t c, size_t s_line);
 char	*ft_reset_map(char*map);
 char	**place_tetriminos(char *buffer);
+char	ft_formcolor(char *map);
+size_t	ft_tablen(char **buffer);
 
 /*
 ** F O R M S
@@ -98,6 +100,6 @@ char *ft_print_j1(char *map, char c, size_t i);
 char *ft_print_j2(char *map, char c, size_t i);
 char *ft_print_j3(char *map, char c, size_t i);
 char *ft_print_j4(char *map, char c, size_t i);
-char *ft_solver(char *map, size_t nb_tetriminos, char *buffer, char c, size_t start);
+char *ft_solver(char *map, size_t nb_tetriminos, char **buffer, size_t k);
 
 #endif

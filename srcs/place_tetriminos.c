@@ -15,7 +15,25 @@ char		**place_tetriminos(char *buffer)
 		i++;
 		start = start + 21;
 	}
+	tab[ft_count_tetriminos(buffer)] = NULL;
 	return (tab);
 }
 
+char	ft_formcolor(char *map)
+{
+	size_t	i;
+	char	c;
 
+	i = 0;
+	while (map[i])
+	{
+		if (ft_isalpha(map[i]) == 1)
+		{
+			c = map[i];
+			return (c);
+		}
+		else
+			i++;
+	}
+	return (0);
+}
