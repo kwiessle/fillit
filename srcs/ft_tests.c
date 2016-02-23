@@ -28,17 +28,11 @@ size_t		ft_4(char **map)
 			if (map[i][k] == '#')
 				j++;
 			if (j > 4)
-			{
-				printf("ft_4_1");
 				return (1);
-			}
 			if (map[i][k] == '\n' && map[i][k + 1] == '\0')
 			{
 				if (j != 4)
-				{
-					printf("ft_4_2");
 					return (1);
-				}
 				else
 					j = 0;
 			}
@@ -57,10 +51,7 @@ size_t		ft_count_tetriminos(char **s)
 	while (s[i])
 		i++;
 	if (i > 27)
-	{
-		printf("count");
 		return (27);
-	}
 	return (i);
 }
 
@@ -111,7 +102,6 @@ int			ft_get_size(char **map)
 		}
 		i++;
 	}
-	printf("getsize");
 	return (1);
 }
 
