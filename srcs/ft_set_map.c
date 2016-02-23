@@ -44,10 +44,7 @@ static int			place_tetriminos(char *t, char *s, int start, char letter)
 
 	i = 0;
 	while (!ft_isalpha(t[i]))
-		{
-			printf("lettre pas trouve\n");
-			++i;
-		}
+				++i;
 	if (set_tetriminos(t, i, s, start) == 4)
 		return (1);
 	reset_tetriminos(t);
@@ -73,8 +70,6 @@ static int			fill_solution(char **tetri, char **sol, int index)
 	sol_cpy = ft_strdup(*sol);
 	while ((*sol)[i])
 	{
-		printf("tetriminos nb = %d\n", index);
-		printf("%s\n", tetri[index]);
 		if (!place_tetriminos(tetri[index], *sol, i, 'A' + index))
 		{
 			++i;
@@ -110,12 +105,8 @@ char		*solver(char **tetriminos)
 	init_solution(solution, j);
 	while (fill_solution(tetriminos, &solution, 0) == 0)
 	{
-		printf("solution1\n");
 		if ((solution = enlarge_solution(tetriminos, solution, j)) == NULL)
-			{
-				printf("coucou");
 				return (NULL);
-		}
 		++j;
 	}
 	return (solution);

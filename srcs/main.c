@@ -39,30 +39,21 @@ int		main(int ac, char **av)
 
 	k = 0;
 	fd = open(av[1], O_RDONLY);
-	printf("fdok\n");
 	if (ac != 2 || fd < 0)
 	{
 		printf("3");
 		error();
 	}
 	tetriminos = read_file(fd);
-	printf("readfileok\n");
 	if (!tetriminos)
 		error();
 	close(fd);
-	printf("closefdok\n");
 	/*if (main_test(tetriminos) != 1)
 	{
 		printf("4");
 		error();
 	}*/
-	printf("maintestok\n");
 	tmp = ft_setcolor(tetriminos);
-	while(tmp[k])
-	{
-		printf("%s\n", tmp[k]);
-		k++;
-	}
 	if ((solution = solver(tmp)) == NULL)
 	{
 		printf("error_solver\n");

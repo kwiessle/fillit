@@ -115,6 +115,19 @@ int			ft_get_size(char **map)
 	return (1);
 }
 
+static void		bzero_tetriminos(char **tetriminos)
+{
+	int			i;
+
+	i = 0;
+	while( i < 26)
+	{
+		*tetriminos = NULL;
+		++tetriminos;
+		++i;
+	}
+}
+
 char		**read_file(int fd)
 {
 	char	**tetriminos;
@@ -126,6 +139,8 @@ char		**read_file(int fd)
 	j = 0;
 	if ((tetriminos = (char **)malloc(sizeof(char *) * 27)) == NULL)
 		return (NULL);
+	bzero_tetriminos(tetriminos);
+	ft_bzero(buf, 546);
 	if (read(fd, buf, 546) < 0)
 		return (NULL);
 	while (buf[j] != '\0')

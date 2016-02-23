@@ -102,27 +102,3 @@ char	**ft_setcolor(char **map)
 	tmp[i] = NULL;
 	return (tmp);
 }
-
-/*int main()
-{
-	char **map;
-	int		i;
-	char **tmp;
-
-	map[0] = "..##\n..##\n....\n....\n";
-	map[1] = "####\n....\n....\n....\n";
-	map[2] = ".###\n..#.\n....\n....\n";
-	map[3] = "...#\n.###\n....\n....\n";
-	map[4] = "....\n..##\n.##.\n....\n";
-	map[5] = "....\n....\n####\n....\n";
-	map[6] = NULL;
-
-	tmp = ft_setcolor(map);
-	i = 0;
-	while (tmp[i])
-	{
-		printf("%s\n", tmp[i]);
-		i++;
-	}
-	return (0);
-}*/
