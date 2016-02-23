@@ -32,7 +32,7 @@ size_t	ft_tablen(char **buffer)
 	size_t	i;
 
 	i = 0;
-	while (buffer[i] != NULL)
+	while (buffer[i])
 		i++;
 	return (i);
 }
@@ -72,31 +72,57 @@ char	*ft_reset_map(char *map)
 	return (map);
 }
 
-char	*ft_set_color(char *map)
+char	**ft_setcolor(char **map)
 {
 	int		i;
 	char	c;
-	char	*tmp;
+	int		j;
+	char	**tmp;
 
 	i = 0;
-	c = 'A';
-	tmp = (char *)malloc(sizeof(char) * ft_strlen(map));
-	while (map[i] != '\0')
+	c = 'a';
+	j = 0;
+	tmp = (char **)malloc(sizeof(char *) * ft_tablen(map) + 1);
+	while (map[i] != NULL)
 	{
-		if (map[i] == '#')
-			tmp[i++] = c;
-		else if (map[i] == '\n' && map[i + 1] == '\n')
+		tmp[i] = (char *)malloc(sizeof(char) * ft_strlen(map[i]));
+		while (map[i][j])
 		{
-			tmp[i] = map[i];
-			c = c + 1;
-			i++;
+			if (map[i][j] == '#')
+				tmp[i][j] = c;
+			else
+				tmp[i][j] = map[i][j];
+			j++;
 		}
-		else
-		{
-			tmp[i] = map[i];
-			i++;
-		}
+		tmp[i][j] = '\0';
+		i++;
+		j = 0;
+		c += 1;
 	}
-	tmp[i] = '\0';
+	tmp[i] = NULL;
 	return (tmp);
 }
+
+/*int main()
+{
+	char **map;
+	int		i;
+	char **tmp;
+
+	map[0] = "..##\n..##\n....\n....\n";
+	map[1] = "####\n....\n....\n....\n";
+	map[2] = ".###\n..#.\n....\n....\n";
+	map[3] = "...#\n.###\n....\n....\n";
+	map[4] = "....\n..##\n.##.\n....\n";
+	map[5] = "....\n....\n####\n....\n";
+	map[6] = NULL;
+
+	tmp = ft_setcolor(map);
+	i = 0;
+	while (tmp[i])
+	{
+		printf("%s\n", tmp[i]);
+		i++;
+	}
+	return (0);
+}*/

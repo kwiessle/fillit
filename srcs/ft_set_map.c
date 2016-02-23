@@ -12,30 +12,111 @@
 
 #include "../includes/fillit.h"
 
-char	*set_map(size_t n)
+void		init_solution(char *solution, int j)
 {
-	size_t		width;
-	size_t		i;
-	size_t		c;
-	char		*map;
+	int		i;
 
-	width = n;
 	i = 0;
-	c = 0;
-	map = (char *)malloc((n  * n + n + 1) * sizeof(char *));
-	while (n > 0)
+	while (i < (j + 1) * j)
 	{
-		while (c < width)
-		{
-			map[i] = '.';
-			i++;
-			c++;
-		}
-		map[i] = '\n';
-		c = 0;
-		i++;
-		n--;
+		if ((i + 1) % (j + 1) == 0)
+			solution[i] = '\n';
+		else
+			solution[i] = '.';
+		++i;
 	}
-	map[i] = '\0';
-	return (map);
+}
+
+static char		*enlarge_solution(char **t, char *s, int width)
+{
+	free(s);
+	if ((s = ft_strnew((width + 2) * (width + 1))) == NULL)
+		return (NULL);
+	init_solution (s, width + 1);
+	reset_all_tetriminos(t);
+	return (s);
+}
+
+static int			place_tetriminos(char *t, char *s, int start, char letter)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (!ft_isalpha(t[i]))
+		{
+			printf("lettre pas trouve\n");
+			++i;
+		}
+	if (set_tetriminos(t, i, s, start) == 4)
+		return (1);
+	reset_tetriminos(t);
+	j = 0;
+	while (s[j])
+	{
+		if (s[j] == letter)
+			s[j] = '.';
+		++j;
+	}
+	return (0);
+}
+
+
+static int			fill_solution(char **tetri, char **sol, int index)
+{
+	int		i;
+	char	*sol_cpy;
+
+	i = 0;
+	if (tetri[index] == NULL)
+		return (1);
+	sol_cpy = ft_strdup(*sol);
+	while ((*sol)[i])
+	{
+		printf("tetriminos nb = %d\n", index);
+		printf("%s\n", tetri[index]);
+		if (!place_tetriminos(tetri[index], *sol, i, 'A' + index))
+		{
+			++i;
+			continue ;
+		}
+		if (fill_solution(tetri, sol, index + 1))
+		{
+			free(sol_cpy);
+			return (1);
+		}
+		free(*sol);
+		*sol = ft_strdup(sol_cpy);
+	}
+	free(sol_cpy);
+	return (0);
+}
+
+char		*solver(char **tetriminos)
+{
+	int		i;
+	int		j;
+	char	*solution;
+
+	i = 0;
+	j = 0;
+	while (tetriminos[i])
+		++i;
+	i *=4;
+	while (j * j < i)
+			++j;
+	if ((solution = (char *)malloc(sizeof(char) * ((j + 1) * j))) == NULL)
+		return (NULL);
+	init_solution(solution, j);
+	while (fill_solution(tetriminos, &solution, 0) == 0)
+	{
+		printf("solution1\n");
+		if ((solution = enlarge_solution(tetriminos, solution, j)) == NULL)
+			{
+				printf("coucou");
+				return (NULL);
+		}
+		++j;
+	}
+	return (solution);
 }

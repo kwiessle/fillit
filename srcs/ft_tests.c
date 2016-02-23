@@ -12,86 +12,132 @@
 
 #include "../includes/fillit.h"
 
-size_t		ft_4(char *map)
+size_t		ft_4(char **map)
 {
 	size_t		i;
 	size_t		j;
+	size_t		k;
 
+	k = 0;
 	i = 0;
 	j = 0;
 	while (map[i])
 	{
-		if (map[i] == '#')
-			j++;
-		if (j > 4)
-			return (1);
-		if (map[i] == '\n' && (map[i + 1] == '\n' || map[i + 1] == '\0'))
+		while (map[i][k])
 		{
-			if (j != 4)
+			if (map[i][k] == '#')
+				j++;
+			if (j > 4)
+			{
+				printf("ft_4_1");
 				return (1);
-			else
-				j = 0;
+			}
+			if (map[i][k] == '\n' && map[i][k + 1] == '\0')
+			{
+				if (j != 4)
+				{
+					printf("ft_4_2");
+					return (1);
+				}
+				else
+					j = 0;
+			}
+			k++;
 		}
+		k = 0;
+		i++;
+	}
+	return (0);
+}
+size_t		ft_count_tetriminos(char **s)
+{
+	size_t		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	if (i > 27)
+	{
+		printf("count");
+		return (27);
+	}
+	return (i);
+}
+
+int			ft_get_char(char **map)
+{
+	size_t		i;
+	size_t		k;
+
+	k = 0;
+	i = 0;
+	while (map[i + 1] != NULL)
+	{
+		while (map[i][k] != '\0')
+		{
+			if (map[i][k] == '.' || map[i][k] == '#' || map[i][k] == '\n')
+				k++;
+			else
+				return (1);
+		}
+		k = 0;
 		i++;
 	}
 	return (0);
 }
 
-size_t		ft_count_tetriminos(char *s)
-{
-	size_t		i;
-	size_t		j;
-
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (s[i] == '\n' && (s[i + 1] == '\n' || s[i + 1] == '\0'))
-		{
-			i++;
-			j++;
-		}
-		else
-			i++;
-	}
-	if (j > 26)
-		return (27);
-	return (j);
-}
-
-int			ft_get_char(char *map)
-{
-	size_t		i;
-
-	i = 0;
-	while (map[i] != '\0')
-	{
-		if (map[i] == '.' || map[i] == '#' || map[i] == '\n')
-			i++;
-		else
-			return (1);
-	}
-	return (0);
-}
-
-int			ft_get_size(char *map)
+int			ft_get_size(char **map)
 {
 	size_t		nl;
 	size_t		i;
+	size_t		k;
 
+	k = 0;
 	nl = 4;
 	i = 0;
-	while (map[nl] == '\n' && i < 5)
+	while (map[i])
 	{
-		nl = nl + 5;
-		if (map[nl] == '\n' && map[nl + 1] == '\n')
+		while (map[i][nl] == '\n' && k < 5)
 		{
-			i = 0;
-			nl++;
+			nl = nl + 5;
+			if (map[i][nl] == '\n' && map[i][nl + 1] == '\0')
+			{
+				nl = 4;
+				k = 0;
+			}
+			if (map[i][nl + 1] == '\0')
+				return (0);
+			k++;
 		}
-		if (map[nl + 1] == '\0')
-			return (0);
 		i++;
 	}
+	printf("getsize");
 	return (1);
+}
+
+char		**read_file(int fd)
+{
+	char	**tetriminos;
+	char	buf[546];
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if ((tetriminos = (char **)malloc(sizeof(char *) * 27)) == NULL)
+		return (NULL);
+	if (read(fd, buf, 546) < 0)
+		return (NULL);
+	while (buf[j] != '\0')
+	{
+		if (ft_strlen(buf) >= 20)
+			tetriminos[i] = ft_strsub(buf, 21 * i, 21);
+		else
+			return (NULL);
+		j += ft_strlen(tetriminos[i]);
+		tetriminos[i][ft_strlen(tetriminos[i])] = '\0';
+		++i;
+	}
+	tetriminos[i] = NULL;
+	return (tetriminos);
 }
