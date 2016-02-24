@@ -21,27 +21,32 @@
 ** T E S T S
 */
 
+size_t	ft_4(char **map);
+size_t	count_tetriminos(char **s);
 int		get_char(char **map);
 int		get_size(char **map);
-size_t	count_tetriminos(char **s);
-size_t	ft_4(char **map);
-int		parse_tetriminos(char **tetriminos);
 
 /*
 ** T O O L S
 */
 
-char	**place_tetri(char *buffer);
 size_t	ft_tablen(char **buffer);
-int		set_tetriminos(char *tetriminos, int i, char *solution, int j);
 char	**read_file(int fd);
+int		parse_tetriminos(char **tetriminos);
 
 /*
 ** S O L V E R
 */
 
+void	init_solution(char *solution, int j);
+char	*solver(char **tetriminos);
+
+/*
+** TETRIMINOS_HANDLING
+*/
+
 void	reset_tetriminos(char *tetriminos);
 void	reset_all_tetriminos(char **tetriminos);
-char	*solver(char **tetriminos);
+int		set_tetriminos(char *tetriminos, int i, char *solution, int j);
 
 #endif

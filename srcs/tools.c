@@ -63,3 +63,38 @@ char		**read_file(int fd)
 	tetriminos[i] = NULL;
 	return (tetriminos);
 }
+
+static int		is_tetriminos(char *tetriminos, int i, char letter)
+{
+	int			k;
+
+	k = 0;
+	if (i >= 0 && i < 20 && tetriminos[i] == '#')
+	{
+		tetriminos[i] = letter;
+		++k;
+		k += is_tetriminos(tetriminos, i + 1, letter);
+		k += is_tetriminos(tetriminos, i + 5, letter);
+		k += is_tetriminos(tetriminos, i - 1, letter);
+		k += is_tetriminos(tetriminos, i - 5, letter);
+	}
+	return (k);
+}
+int			parse_tetriminos(char **tetriminos)
+{
+	int			i;
+	char		letter;
+
+	letter = 'a';
+	while (*tetriminos)
+	{
+		i = 0;
+		while ((*tetriminos)[i] && (*tetriminos)[i] != '#')
+			++i;
+		if ((*tetriminos)[i] && is_tetriminos(*tetriminos, i, letter) != 4)
+			return (0);
+		++tetriminos;
+		++letter;
+	}
+	return (1);
+}
