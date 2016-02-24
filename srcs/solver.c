@@ -107,7 +107,7 @@ char		*solver(char **tetriminos)
 	{
 		if ((solution = enlarge_solution(tetriminos, solution, j)) == NULL)
 				return (NULL);
-		++j;
+		j++;
 	}
 	return (solution);
 }

@@ -27,23 +27,17 @@ size_t		ft_4(char **map)
 		{
 			if (map[i][k] == '#')
 				j++;
-			if (j > 4)
-				return (1);
-			if (map[i][k] == '\n' && map[i][k + 1] == '\0')
-			{
-				if (j != 4)
-					return (1);
-				else
-					j = 0;
-			}
 			k++;
 		}
+		if (j != 4)
+			return (1);
+		j = 0;
 		k = 0;
 		i++;
 	}
 	return (0);
 }
-size_t		ft_count_tetriminos(char **s)
+size_t		count_tetriminos(char **s)
 {
 	size_t		i;
 
@@ -55,7 +49,7 @@ size_t		ft_count_tetriminos(char **s)
 	return (i);
 }
 
-int			ft_get_char(char **map)
+int			get_char(char **map)
 {
 	size_t		i;
 	size_t		k;
@@ -77,30 +71,68 @@ int			ft_get_char(char **map)
 	return (0);
 }
 
-int			ft_get_size(char **map)
+static int			get_one_size(char *map, int i)
 {
-	size_t		nl;
-	size_t		i;
-	size_t		k;
+	int		k;
 
 	k = 0;
-	nl = 4;
-	i = 0;
-	while (map[i])
+	if (map[i] != '\n')
 	{
-		while (map[i][nl] == '\n' && k < 5)
-		{
-			nl = nl + 5;
-			if (map[i][nl] == '\n' && map[i][nl + 1] == '\0')
-			{
-				nl = 4;
-				k = 0;
-			}
-			if (map[i][nl + 1] == '\0')
-				return (0);
-			k++;
-		}
-		i++;
+		++k;
+		k += get_one_size(map, i + 5);
+		k += get_one_size(map, i + 10);
+		k += get_one_size(map, i + 15);
+	}
+	return (k);
+}
+
+int			get_size(char **tetriminos)
+{
+	int		i;
+
+	while (*tetriminos)
+	{
+		i = 0;
+		while ((*tetriminos)[i] && (*tetriminos)[i] != '\n')
+			++i;
+		if ((*tetriminos)[i] && get_one_size(*tetriminos, i) != 4)
+			return (0);
+		++tetriminos;
+	}
+	return (1);
+}
+
+static int		is_tetriminos(char *tetriminos, int i, char letter)
+{
+	int			hashnb;
+
+	hashnb = 0;
+	if (i >= 0 && i < 20 && tetriminos[i] == '#')
+	{
+		tetriminos[i] = letter;
+		++hashnb;
+		hashnb += is_tetriminos(tetriminos, i + 1, letter);
+		hashnb += is_tetriminos(tetriminos, i + 5, letter);
+		hashnb += is_tetriminos(tetriminos, i - 1, letter);
+		hashnb += is_tetriminos(tetriminos, i - 5, letter);
+	}
+	return (hashnb);
+}
+int			parse_tetriminos(char **tetriminos)
+{
+	int			i;
+	char		letter;
+
+	letter = 'a';
+	while (*tetriminos)
+	{
+		i = 0;
+		while ((*tetriminos)[i] && (*tetriminos)[i] != '#')
+			++i;
+		if ((*tetriminos)[i] && is_tetriminos(*tetriminos, i, letter) != 4)
+			return (0);
+		++tetriminos;
+		++letter;
 	}
 	return (1);
 }

@@ -20,8 +20,8 @@ static void		error(void)
 
 static int		main_test(char **buf)
 {
-	if (ft_get_char(buf) == 1 || ft_get_size(buf) == 1 || ft_4(buf) == 1 ||\
-			ft_count_tetriminos(buf) == 27)
+	if (get_char(buf) == 1 || get_size(buf) == 1 || ft_4(buf) == 1 ||\
+			count_tetriminos(buf) == 27 || parse_tetriminos(buf) != 1)
 		error();
 	return (1);
 }
@@ -31,7 +31,6 @@ int		main(int ac, char **av)
 	int			fd;
 	char		*solution;
 	char		**tetriminos;
-	char		**tmp;
 	int			k;
 
 	k = 0;
@@ -39,13 +38,10 @@ int		main(int ac, char **av)
 	if (ac != 2 || fd < 0)
 		error();
 	tetriminos = read_file(fd);
-	if (!tetriminos)
-		error();
 	close(fd);
-	if (main_test(tetriminos) != 1)
+	if (!tetriminos || !main_test(tetriminos))
 		error();
-	tmp = ft_setcolor(tetriminos);
-	if ((solution = solver(tmp)) == NULL)
+	if ((solution = solver(tetriminos)) == NULL)
 		error();
 	ft_putendl(solution);
 	free(solution);

@@ -14,27 +14,26 @@
 # define FILLIT_H
 
 # include <fcntl.h>
+# include <stdio.h>
 # include "../libft/libft.h"
 
 /*
 ** T E S T S
 */
 
-int		ft_get_char(char **map);
-int		ft_get_size(char **map);
-size_t	ft_count_tetriminos(char **s);
+int		get_char(char **map);
+int		get_size(char **map);
+size_t	count_tetriminos(char **s);
 size_t	ft_4(char **map);
+int		parse_tetriminos(char **tetriminos);
 
 /*
 ** T O O L S
 */
 
-char	**ft_setcolor(char **tetriminos);
 char	**place_tetri(char *buffer);
-char	ft_formcolor(char **buffer, size_t k);
 size_t	ft_tablen(char **buffer);
 int		set_tetriminos(char *tetriminos, int i, char *solution, int j);
-int		is_tetriminos(char *tetriminos, int i, char letter);
 char	**read_file(int fd);
 
 /*

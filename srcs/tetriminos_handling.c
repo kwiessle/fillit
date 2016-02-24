@@ -25,23 +25,6 @@ void		reset_all_tetriminos(char **tetriminos)
 	}
 }
 
-int			is_tetriminos(char *tetriminos, int i, char letter)
-{
-	int		hashnb;
-
-	hashnb = 0;
-	if (i >= 0 && i < 20 && tetriminos[i] == '#')
-	{
-		tetriminos[i] = letter;
-		++hashnb;
-		hashnb += is_tetriminos(tetriminos, i + 1, letter);
-		hashnb += is_tetriminos(tetriminos, i + 5, letter);
-		hashnb += is_tetriminos(tetriminos, i - 1, letter);
-		hashnb += is_tetriminos(tetriminos, i - 5, letter);
-	}
-	return (hashnb);
-}
-
 int			set_tetriminos(char *tetriminos, int i, char *solution, int j)
 {
 	int		hashnb;
