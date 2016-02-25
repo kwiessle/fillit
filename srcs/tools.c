@@ -21,11 +21,13 @@ char	**ft_set_color(char **map)
 
 	i = 0;
 	c = 'a';
-	j = 0;
-	tmp = (char **)malloc(sizeof(char *) * ft_tablen(map) + 1);
+	if((tmp = (char **)malloc(sizeof(char *) * ft_tablen(map) + 1)) == NULL)
+		return (NULL);
 	while (map[i] != NULL)
 	{
-		tmp[i] = (char *)malloc(sizeof(char) * ft_strlen(map[i]));
+		j = 0;
+		if ((tmp[i] = (char *)malloc(sizeof(char) * ft_strlen(map[i]))) == NULL)
+			return (NULL);
 		while (map[i][j])
 		{
 			if (map[i][j] == '#')
@@ -36,7 +38,6 @@ char	**ft_set_color(char **map)
 		}
 		tmp[i][j] = '\0';
 		i++;
-		j = 0;
 		c += 1;
 	}
 	tmp[i] = NULL;

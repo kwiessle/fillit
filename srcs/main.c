@@ -42,5 +42,7 @@ int		main(int ac, char **av)
 		error();
 	ft_putendl(solution);
 	free(solution);
+	free(tmp);
+	free(tetriminos);
 	return (0);
 }
