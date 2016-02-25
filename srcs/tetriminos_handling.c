@@ -47,3 +47,18 @@ int			set_tetriminos(char *tetriminos, int i, char *solution, int j)
 	}
 	return (hashnb);
 }
+
+size_t		ft_add_tab(size_t *tab)
+{
+	size_t		i;
+	size_t		index;
+
+	i = 0;
+	index = 0;
+	while (index < 19)
+	{
+		i = tab[index] + i;
+		index++;
+	}
+	return (i);
+}
