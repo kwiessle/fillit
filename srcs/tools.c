@@ -12,6 +12,37 @@
 
 #include "../includes/fillit.h"
 
+char	**ft_set_color(char **map)
+{
+	int		i;
+	char	c;
+	int		j;
+	char	**tmp;
+
+	i = 0;
+	c = 'a';
+	j = 0;
+	tmp = (char **)malloc(sizeof(char *) * ft_tablen(map) + 1);
+	while (map[i] != NULL)
+	{
+		tmp[i] = (char *)malloc(sizeof(char) * ft_strlen(map[i]));
+		while (map[i][j])
+		{
+			if (map[i][j] == '#')
+				tmp[i][j] = c;
+			else
+				tmp[i][j] = map[i][j];
+			j++;
+		}
+		tmp[i][j] = '\0';
+		i++;
+		j = 0;
+		c += 1;
+	}
+	tmp[i] = NULL;
+	return (tmp);
+}
+
 size_t	ft_tablen(char **buffer)
 {
 	size_t	i;
@@ -20,6 +51,17 @@ size_t	ft_tablen(char **buffer)
 	while (buffer[i])
 		i++;
 	return (i);
+}
+
+static int		main_test(char *buf)
+{
+	if (ft_get_char(buf) == 1 || ft_get_size(buf) == 1)
+		error();
+	if (ft_count_tetriminos(buf) >= 27 || ft_4(buf) == 1)
+		error();
+	if (ft_count_tetriminos(buf) != ft_add_tab(ft_is_forms_4(buf, '#')))
+		error();
+	return (1);
 }
 
 static void		bzero_tetriminos(char **tetriminos)
@@ -50,6 +92,12 @@ char		**read_file(int fd)
 	ft_bzero(buf, 546);
 	if (read(fd, buf, 546) < 0)
 		return (NULL);
+	if (!main_test(buf))
+	{
+		free(tetriminos);
+		close(fd);
+		error();
+	}
 	while (buf[j] != '\0')
 	{
 		if (ft_strlen(buf) >= 20)
@@ -62,39 +110,4 @@ char		**read_file(int fd)
 	}
 	tetriminos[i] = NULL;
 	return (tetriminos);
-}
-
-static int		is_tetriminos(char *tetriminos, int i, char letter)
-{
-	int			k;
-
-	k = 0;
-	if (i >= 0 && i < 20 && tetriminos[i] == '#')
-	{
-		tetriminos[i] = letter;
-		++k;
-		k += is_tetriminos(tetriminos, i + 1, letter);
-		k += is_tetriminos(tetriminos, i + 5, letter);
-		k += is_tetriminos(tetriminos, i - 1, letter);
-		k += is_tetriminos(tetriminos, i - 5, letter);
-	}
-	return (k);
-}
-int			parse_tetriminos(char **tetriminos)
-{
-	int			i;
-	char		letter;
-
-	letter = 'a';
-	while (*tetriminos)
-	{
-		i = 0;
-		while ((*tetriminos)[i] && (*tetriminos)[i] != '#')
-			++i;
-		if ((*tetriminos)[i] && is_tetriminos(*tetriminos, i, letter) != 4)
-			return (0);
-		++tetriminos;
-		++letter;
-	}
-	return (1);
 }

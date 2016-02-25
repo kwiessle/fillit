@@ -14,18 +14,26 @@
 # define FILLIT_H
 
 # include <fcntl.h>
-# include <stdio.h>
 # include "../libft/libft.h"
 
 /*
 ** T E S T S
 */
 
-size_t	ft_4(char **map);
-size_t	count_tetriminos(char **s);
-int		get_char(char **map);
-int		get_size(char **map);
-
+size_t	ft_4(char *map);
+size_t	ft_count_tetriminos(char *s);
+int		ft_get_char(char *map);
+int		ft_get_size(char *map);
+size_t	ft_is_o(char *map, char c);
+size_t	ft_is_i(char *map, char c);
+size_t	ft_is_z(char *map, char c);
+size_t	ft_is_s(char *map, char c);
+size_t	ft_is_t(char *map, char c);
+size_t	ft_is_l(char *map, char c);
+size_t	ft_is_j(char *map, char c);
+size_t	*ft_is_forms_4(char *map, char c);
+size_t	ft_add_tab(size_t *map);
+char	**ft_set_color(char **tetriminos);
 /*
 ** T O O L S
 */
@@ -40,6 +48,7 @@ int		parse_tetriminos(char **tetriminos);
 
 void	init_solution(char *solution, int j);
 char	*solver(char **tetriminos);
+void	error(void);
 
 /*
 ** TETRIMINOS_HANDLING

@@ -12,36 +12,33 @@
 
 #include "../includes/fillit.h"
 
-static void		error(void)
+void		error(void)
 {
-	ft_putendl_fd("error", 2);
+	ft_putendl("error");
 	exit(EXIT_FAILURE);
 }
 
-static int		main_test(char **buf)
-{
-	if (get_char(buf) == 1 || get_size(buf) == 1 || ft_4(buf) == 1 ||\
-			count_tetriminos(buf) == 27 || parse_tetriminos(buf) != 1)
-		error();
-	return (1);
-}
 
 int		main(int ac, char **av)
 {
 	int			fd;
 	char		*solution;
 	char		**tetriminos;
+	char		**tmp;
 	int			k;
+	int			i= 0;
 
 	k = 0;
+	i = 0;
 	fd = open(av[1], O_RDONLY);
 	if (ac != 2 || fd < 0)
 		error();
 	tetriminos = read_file(fd);
 	close(fd);
-	if (!tetriminos || !main_test(tetriminos))
+	if (!tetriminos)
 		error();
-	if ((solution = solver(tetriminos)) == NULL)
+	tmp = ft_set_color(tetriminos);
+	if ((solution = solver(tmp)) == NULL)
 		error();
 	ft_putendl(solution);
 	free(solution);

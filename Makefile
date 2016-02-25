@@ -1,7 +1,8 @@
 NAME = fillit
 
 SRCS = srcs/main.c srcs/solver.c srcs/tests.c \
-	   srcs/tools.c srcs/tetriminos_handling.c
+	   srcs/tools.c srcs/tetriminos_handling.c srcs/form_pack1.c srcs/form_pack2.c \
+	   srcs/is_forms.c
 
 OBJS =		$(SRCS:.c=.o)
 INCLUDES =	-I libft -I includes
