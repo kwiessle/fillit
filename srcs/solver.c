@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solver.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/10 16:24:28 by vquesnel          #+#    #+#             */
-/*   Updated: 2015/12/10 16:25:02 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/03/08 23:26:44 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/03/08 23:26:53 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int			place_tetriminos(char *t, char *s, int start, char letter)
 
 	i = 0;
 	while (!ft_isalpha(t[i]))
-				++i;
+		++i;
 	if (set_tetriminos(t, i, s, start) == 4)
 		return (1);
 	reset_tetriminos(t);
@@ -99,14 +99,14 @@ char		*solver(char **tetriminos)
 		++i;
 	i *=4;
 	while (j * j < i)
-			++j;
+		++j;
 	if ((solution = (char *)malloc(sizeof(char) * ((j + 1) * j))) == NULL)
 		return (NULL);
 	init_solution(solution, j);
 	while (fill_solution(tetriminos, &solution, 0) == 0)
 	{
 		if ((solution = enlarge_solution(tetriminos, solution, j)) == NULL)
-				return (NULL);
+			return (NULL);
 		j++;
 	}
 	return (solution);
