@@ -6,55 +6,45 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:27:46 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/08 23:28:03 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/09 10:59:57 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char	**ft_set_color(char **map)
+void		ft_set_color(char **map)
 {
 	int		i;
 	char	c;
 	int		j;
-	char	**tmp;
 
 	i = 0;
 	c = 'a';
-	if((tmp = (char **)malloc(sizeof(char *) * ft_tablen(map) + 1)) == NULL)
-		return (NULL);
-	while (map[i] != NULL)
+	while (map[i])
 	{
 		j = 0;
-		if ((tmp[i] = (char *)malloc(sizeof(char) * ft_strlen(map[i]))) == NULL)
-			return (NULL);
 		while (map[i][j])
 		{
 			if (map[i][j] == '#')
-				tmp[i][j] = c;
-			else
-				tmp[i][j] = map[i][j];
-			j++;
+				map[i][j] = c;
+			++j;
 		}
-		tmp[i][j] = '\0';
-		i++;
-		c += 1;
+		++i;
+		++c;
 	}
-	tmp[i] = NULL;
-	return (tmp);
 }
 
-size_t	ft_tablen(char **buffer)
+size_t		ft_tablen(char **buffer)
 {
 	size_t	i;
 
 	i = 0;
 	while (buffer[i])
-		i++;
+		++i;
 	return (i);
 }
 
-static int		main_test(char *buf)
+static int	main_test(char *buf)
 {
 	if (ft_get_char(buf) == 1 || ft_get_size(buf) == 1)
 		error();
@@ -65,9 +55,9 @@ static int		main_test(char *buf)
 	return (1);
 }
 
-static void		bzero_tetriminos(char **tetriminos)
+static void	bzero_tetriminos(char **tetriminos)
 {
-	int			i;
+	int		i;
 
 	i = 0;
 	while( i < 26)
@@ -94,12 +84,8 @@ char		**read_file(int fd)
 	if (read(fd, buf, 546) < 0)
 		return (NULL);
 	if (!main_test(buf))
-	{
-		free(tetriminos);
-		close(fd);
 		error();
-	}
-	while (buf[j] != '\0')
+	while (buf[j])
 	{
 		if (ft_strlen(buf) >= 20)
 			tetriminos[i] = ft_strsub(buf, 21 * i, 21);
@@ -109,7 +95,5 @@ char		**read_file(int fd)
 		tetriminos[i][ft_strlen(tetriminos[i])] = '\0';
 		++i;
 	}
-	tetriminos[i] = NULL;
 	return (tetriminos);
 }
-

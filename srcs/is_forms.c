@@ -6,13 +6,13 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:25:45 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/08 23:28:45 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/09 10:42:13 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-static size_t		*ft_set_tab(void)
+static size_t	*ft_set_tab(void)
 {
 	size_t		*tab;
 	size_t		i;
@@ -27,7 +27,7 @@ static size_t		*ft_set_tab(void)
 	return (tab);
 }
 
-static size_t		*ft_is_forms_1(char *map, char c)
+static size_t	*ft_is_forms_1(char *map, char c)
 {
 	size_t		*tab;
 	char		*buf;
@@ -55,7 +55,7 @@ static size_t		*ft_is_forms_1(char *map, char c)
 	return (tab);
 }
 
-static size_t		*ft_is_forms_2(char *map, char c)
+static size_t	*ft_is_forms_2(char *map, char c)
 {
 	size_t		*tab;
 	char		*buf;
@@ -83,7 +83,7 @@ static size_t		*ft_is_forms_2(char *map, char c)
 	return (tab);
 }
 
-static size_t		*ft_is_forms_3(char *map, char c)
+static size_t	*ft_is_forms_3(char *map, char c)
 {
 	size_t		*tab;
 	char		*buf;
@@ -111,7 +111,7 @@ static size_t		*ft_is_forms_3(char *map, char c)
 	return (tab);
 }
 
-size_t				*ft_is_forms_4(char *map, char c)
+size_t			*ft_is_forms_4(char *map, char c)
 {
 	size_t		*tab;
 	char		*buf;

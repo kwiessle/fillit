@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:25:23 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/08 23:25:39 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/09 10:41:26 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		ft_is_l(char *map, char c)
 {
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	while (map[i])
@@ -39,7 +39,7 @@ size_t		ft_is_l(char *map, char c)
 
 size_t		ft_is_j(char *map, char c)
 {
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	while (map[i])

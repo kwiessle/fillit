@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:27:27 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/08 23:27:44 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/09 10:45:01 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int			set_tetriminos(char *tetriminos, int i, char *solution, int j)
 		++len;
 	++len;
 	if (i >= 0 && i < 20 && j >= 0 && j < (len * (len - 1))
-			&& tetriminos[i] >= 'a' && tetriminos[i] <= 'z' && solution[j] == '.')
+			&& tetriminos[i] >= 'a' && tetriminos[i] <= 'z' &&
+			solution[j] == '.')
 	{
 		tetriminos[i] -= 32;
 		solution[j] = tetriminos[i];
@@ -62,8 +63,8 @@ int			set_tetriminos(char *tetriminos, int i, char *solution, int j)
 
 size_t		ft_add_tab(size_t *tab)
 {
-	size_t		i;
-	size_t		index;
+	size_t	i;
+	size_t	index;
 
 	i = 0;
 	index = 0;

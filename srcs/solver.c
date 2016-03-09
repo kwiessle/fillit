@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:44 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/08 23:26:53 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/09 10:43:06 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		init_solution(char *solution, int j)
 	}
 }
 
-static char		*enlarge_solution(char **t, char *s, int width)
+static char	*enlarge_solution(char **t, char *s, int width)
 {
 	free(s);
 	if ((s = ft_strnew((width + 2) * (width + 1))) == NULL)
@@ -37,7 +37,7 @@ static char		*enlarge_solution(char **t, char *s, int width)
 	return (s);
 }
 
-static int			place_tetriminos(char *t, char *s, int start, char letter)
+static int	place_tetriminos(char *t, char *s, int start, char letter)
 {
 	int		i;
 	int		j;
@@ -59,7 +59,7 @@ static int			place_tetriminos(char *t, char *s, int start, char letter)
 }
 
 
-static int			fill_solution(char **tetri, char **sol, int index)
+static int	fill_solution(char **tetri, char **sol, int index)
 {
 	int		i;
 	char	*sol_cpy;
