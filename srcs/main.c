@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:13 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/09 10:57:30 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/13 16:51:51 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ int		main(int ac, char **av)
 	int			fd;
 	char		*solution;
 	char		**tetriminos;
-	int			k;
-	int			i= 0;
 
-	k = 0;
-	i = 0;
 	fd = open(av[1], O_RDONLY);
 	if (ac != 2 || fd < 0)
 		error();
