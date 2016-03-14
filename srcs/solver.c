@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:44 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/09 10:43:06 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/14 14:29:37 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*enlarge_solution(char **t, char *s, int width)
 	free(s);
 	if ((s = ft_strnew((width + 2) * (width + 1))) == NULL)
 		return (NULL);
-	init_solution (s, width + 1);
+	init_solution(s, width + 1);
 	reset_all_tetriminos(t);
 	return (s);
 }
@@ -57,7 +57,6 @@ static int	place_tetriminos(char *t, char *s, int start, char letter)
 	}
 	return (0);
 }
-
 
 static int	fill_solution(char **tetri, char **sol, int index)
 {
@@ -97,7 +96,7 @@ char		*solver(char **tetriminos)
 	j = 0;
 	while (tetriminos[i])
 		++i;
-	i *=4;
+	i *= 4;
 	while (j * j < i)
 		++j;
 	if ((solution = (char *)malloc(sizeof(char) * ((j + 1) * j))) == NULL)

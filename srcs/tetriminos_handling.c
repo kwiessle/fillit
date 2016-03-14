@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:27:27 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/09 10:45:01 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/14 14:30:26 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		reset_tetriminos(char *tetriminos)
 	while (tetriminos[i])
 	{
 		if (tetriminos[i] >= 'A' && tetriminos[i] <= 'Z')
-			tetriminos[i] += 32 ;
+			tetriminos[i] += 32;
 		++i;
 	}
 }

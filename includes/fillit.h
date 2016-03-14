@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:54:17 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/09 10:57:59 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/14 14:34:08 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@ size_t	ft_is_l(char *map, char c);
 size_t	ft_is_j(char *map, char c);
 size_t	*ft_is_forms_4(char *map, char c);
 size_t	ft_add_tab(size_t *map);
-void	ft_set_color(char **tetriminos);
 /*
 ** T O O L S
 */
 
 size_t	ft_tablen(char **buffer);
 char	**read_file(int fd);
-int		parse_tetriminos(char **tetriminos);
+void	set_color(char **tetriminos);
 
 /*
 ** S O L V E R

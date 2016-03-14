@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:13 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/13 16:51:51 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/14 14:34:28 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	error(void)
 	ft_putendl("error");
 	exit(EXIT_FAILURE);
 }
-
 
 int		main(int ac, char **av)
 {
@@ -32,7 +31,7 @@ int		main(int ac, char **av)
 	close(fd);
 	if (!tetriminos)
 		error();
-	ft_set_color(tetriminos);
+	set_color(tetriminos);
 	if ((solution = solver(tetriminos)) == NULL)
 		error();
 	ft_putendl(solution);

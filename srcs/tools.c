@@ -6,13 +6,13 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:27:46 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/09 10:59:57 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/14 14:33:25 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-void		ft_set_color(char **map)
+void		set_color(char **map)
 {
 	int		i;
 	char	c;
@@ -60,7 +60,7 @@ static void	bzero_tetriminos(char **tetriminos)
 	int		i;
 
 	i = 0;
-	while( i < 26)
+	while (i < 26)
 	{
 		*tetriminos = NULL;
 		++tetriminos;
@@ -80,7 +80,6 @@ char		**read_file(int fd)
 	if ((tetriminos = (char **)malloc(sizeof(char *) * 27)) == NULL)
 		return (NULL);
 	bzero_tetriminos(tetriminos);
-	ft_bzero(buf, 546);
 	if (read(fd, buf, 546) < 0)
 		return (NULL);
 	if (!main_test(buf))
