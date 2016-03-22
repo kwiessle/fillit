@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:54:17 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/22 15:29:06 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/23 00:34:28 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ size_t	ft_is_l(char *map, char c);
 size_t	ft_is_j(char *map, char c);
 size_t	*ft_is_forms_4(char *map, char c);
 size_t	ft_add_tab(size_t *map);
+
 /*
 ** T O O L S
 */
