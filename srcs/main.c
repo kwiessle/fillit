@@ -6,11 +6,11 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:13 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/14 14:34:28 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/22 15:27:59 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include "fillit.h"
 
 void	error(void)
 {
