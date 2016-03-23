@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:13 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/23 12:40:16 by kwiessle         ###   ########.fr       */
+/*   Updated: 2016/03/23 13:01:29 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int		main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		ft_putstr("usage :	Argument Error\n	Use only one to run fillit\n");
+		ft_putstr("usage :	./fillit <file_name>\n");
+		ft_putstr("Use one and only one file_name to run fillit\n");
 		return (0);
 	}
 	fd = open(av[1], O_RDONLY);
@@ -40,7 +41,7 @@ int		main(int ac, char **av)
 	set_color(tetriminos);
 	if ((solution = solver(tetriminos)) == NULL)
 		error();
-	ft_putendl(solution);
+	ft_putstr(solution);
 	free(solution);
 	free(tetriminos);
 	return (0);
