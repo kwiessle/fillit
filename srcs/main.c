@@ -6,11 +6,12 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:26:13 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/22 15:27:59 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/23 12:40:16 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 void	error(void)
 {
@@ -24,6 +25,11 @@ int		main(int ac, char **av)
 	char		*solution;
 	char		**tetriminos;
 
+	if (ac != 2)
+	{
+		ft_putstr("usage :	Argument Error\n	Use only one to run fillit\n");
+		return (0);
+	}
 	fd = open(av[1], O_RDONLY);
 	if (ac != 2 || fd < 0)
 		error();

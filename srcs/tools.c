@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 23:27:46 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/03/22 15:28:33 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/03/23 12:50:17 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	bzero_tetriminos(char **tetriminos)
 char		**read_file(int fd)
 {
 	char	**tetriminos;
-	char	buf[546];
+	char	buf[547];
 	int		i;
 	int		j;
 
@@ -80,7 +80,7 @@ char		**read_file(int fd)
 	if ((tetriminos = (char **)malloc(sizeof(char *) * 27)) == NULL)
 		return (NULL);
 	bzero_tetriminos(tetriminos);
-	if (read(fd, buf, 546) < 0)
+	if (read(fd, buf, 546) <= 0)
 		return (NULL);
 	if (!main_test(buf))
 		error();
